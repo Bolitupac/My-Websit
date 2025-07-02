@@ -126,7 +126,7 @@ window.addEventListener('scroll', () => {
 const contactForm = document.querySelector('.form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+        //e.preventDefault(); removed this line so the form will submit
         
         // Get form data
         const formData = new FormData(contactForm);
