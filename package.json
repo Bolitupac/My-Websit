@@ -1,0 +1,15 @@
+{
+  "name": "nanbol-portfolio",
+  "version": "1.0.0",
+  "description": "Nanbol Felix Dassak's personal portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server"
+  },
+  "keywords": ["portfolio", "software-engineer", "backend-developer"],
+  "author": "Nanbol Felix Dassak",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
