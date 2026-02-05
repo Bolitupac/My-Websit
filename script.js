@@ -91,6 +91,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// About dropdown behavior on mobile
+const aboutDropdown = document.querySelector('.about-dropdown');
+const setAboutDropdownState = () => {
+    if (!aboutDropdown) return;
+    if (window.innerWidth <= 768) {
+        aboutDropdown.removeAttribute('open');
+    } else {
+        aboutDropdown.setAttribute('open', 'open');
+    }
+};
+
+setAboutDropdownState();
+window.addEventListener('resize', setAboutDropdownState);
+
+// Weather effects toggle
+const weatherToggle = document.querySelector('.weather-toggle');
+let snowEnabled = true;
+
+const setSnowState = (enabled) => {
+    snowEnabled = enabled;
+    document.body.classList.toggle('weather-snow', snowEnabled);
+    if (weatherToggle) {
+        weatherToggle.textContent = snowEnabled ? '❄' : '✦';
+    }
+};
+
+if (weatherToggle) {
+    setSnowState(true);
+    weatherToggle.addEventListener('click', () => {
+        setSnowState(!snowEnabled);
+    });
+}
+
 // Hire modal
 const hireModal = document.querySelector('#hireModal');
 const hireTriggers = document.querySelectorAll('.hire-trigger');

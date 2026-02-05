@@ -42,6 +42,9 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <button type="button" class="weather-toggle" aria-label="Toggle weather effects">❄</button>
+            </div>
             <div class="nav-cta">
                 <button type="button" class="btn btn-primary hire-trigger">HIRE</button>
             </div>
@@ -94,12 +97,15 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-description">
-                        I am Nanbol Felix Dassak, a student software developer with a strong interest in AI, data science, and building practical solutions. I work mainly with Python and web technologies, enjoy breaking down complex problems, and continuously improve by learning, experimenting, and building real projects.
-                    </p>
-                    <p class="about-description">
-                        My long-term goal is to create impactful technology and grow into an AI engineer and tech founder. I am currently running my IT program with the Plateau State Information and Communication Technology Development Agency (PITCDA).
-                    </p>
+                    <details class="about-dropdown" open>
+                        <summary>About me</summary>
+                        <p class="about-description">
+                            I am Nanbol Felix Dassak, a student software developer with a strong interest in AI, data science, and building practical solutions. I work mainly with Python and web technologies, enjoy breaking down complex problems, and continuously improve by learning, experimenting, and building real projects.
+                        </p>
+                        <p class="about-description">
+                            My long-term goal is to create impactful technology and grow into an AI engineer and tech founder. I am currently running my IT program with the Plateau State Information and Communication Technology Development Agency (PITCDA).
+                        </p>
+                    </details>
                     <div class="about-stats">
                         <div class="stat-item glass">
                             <span class="stat-number">7+</span>
@@ -371,6 +377,8 @@
             </div>
         </div>
     </div>
+
+    <div class="weather-layer snow-layer" aria-hidden="true"></div>
 
     <footer class="footer">
         <div class="container">
