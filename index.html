@@ -1,178 +1,496 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nanbol Felix Dassak | Software Engineer & Game Developer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="icons8-greek-helmet-96.png">
-    <link rel="apple-touch-icon" href="icons8-greek-helmet-96.png">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <meta name="description" content="Portfolio of Nanbol Felix Dassak, Software Engineering student at Babcock University, Game Jam winner, and AI enthusiast specializing in Python, Django, and Godot.">
-    <meta name="keywords" content="Nanbol Dassak, Nanbol Felix, Dassak Nanbol, Dassak Felix, nanboldassak, dassaknanbol,  Bolitupac, Software Engineer Nigeria, Game Developer, AI Engineer, Babcock University, Tech Portfolio, Python, Django, Flask, Godot, Web Projects, Nigerian Game dev, Godot Dev, Babcock University, Game dev plateau state, Tarok, Software Engineer">
+    <title>Nanbol Felix Dassak | AI Systems Architect &amp; Software Engineer</title>
+    <meta name="description"
+        content="Portfolio of Nanbol Felix Dassak — AI Systems Architect building autonomous agents, n8n workflows, and enterprise automation at NNPC Limited.">
+    <meta name="keywords"
+        content="Nanbol Dassak, Bolitupac, AI Systems Architect, Automation, n8n, OpenAI, Django, Flask, Python, NNPC, PICTDA, Babcock University">
     <meta name="author" content="Nanbol Felix Dassak">
     <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="Nanbol Felix Dassak | Software Engineer & Game Developer Portfolio">
-    <meta property="og:description" content="Software Engineering student, Game Jam winner, and AI enthusiast specializing in Python, Django, and Godot.">
+    <meta property="og:title" content="Nanbol Felix Dassak | AI Systems Architect & Founder">
+    <meta property="og:description"
+        content="Building decision-making engines — autonomous agents, enterprise automation, and AI-first backend systems.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bolitupac.github.io/My-Websit/">
-    <meta property="og:image" content="https://bolitupac.github.io/My-Websit/assets/profile-image.jpg">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nanbol Felix Dassak | Portfolio">
-    <meta name="twitter:description" content="Explore my software engineering projects, coding skills, and tech journey.">
-    <meta name="twitter:image" content="https://bolitupac.github.io/My-Websit/assets/profile-image.jpg">
-
-    <meta name="google-site-verification" content="uXDMGpLkdZ8scUHFbU8FZQQ_fZhcKSXxpU71piCvb8Y" />
+    <meta property="og:url" content="https://bolitupac.github.io/My-Websit/portfolio.html">
+    <meta property="og:image" content="https://bolitupac.github.io/My-Websit/profilepic.jpg">
+    <link rel="icon" type="image/png" href="icons8-greek-helmet-96.png">
+    <link rel="apple-touch-icon" href="icons8-greek-helmet-96.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
+    <meta name="google-site-verification" content="uXDMGpLkdZ8scUHFbU8FZQQ_fZhcKSXxpU71piCvb8Y">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-mark">NFD</span>
-                <span class="logo-text">Nanbol Dassak</span>
+
+    <!-- ── NAV ─────────────────────────────────────────── -->
+    <nav id="site-nav">
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <span class="mono brand-tag">NFD</span>
+                <span class="brand-name">Nanbol Dassak</span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#stats" class="nav-link">Stats</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="portfolio.html" class="nav-link nav-canvas-glow" id="canvas-nav-link"
+                        title="Interactive n8n-style workflow canvas — pan through my career journey as connected nodes">
+                        <span class="canvas-glow-dot"></span> Canvas View
+                    </a>
+                </li>
             </ul>
-            <div class="nav-actions">
-                <button type="button" class="weather-toggle" aria-label="Toggle weather effects">❄</button>
-            </div>
-            <div class="nav-cta">
-                <button type="button" class="btn btn-primary hire-trigger">HIRE</button>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-right">
+                <button id="theme-toggle" class="btn-ghost btn-ghost--sm" type="button">☀ Light</button>
+                <button class="hamburger" id="hamburger" aria-label="Menu" type="button">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
+    <!-- ── HERO ────────────────────────────────────────── -->
+    <section id="home" class="hero-section">
+        <div class="dot-grid"></div>
+        <div class="container hero-grid">
             <div class="hero-text">
-                <p class="hero-tag">NASA-Inspired Space Portfolio</p>
+                <span class="mono label-tag">AI SYSTEMS ARCHITECT · AUTOMATION ENGINEER</span>
+                <div class="code-sig"><span class="mono">#D45SAK <span class="code-sig-accent">NF</span></span></div>
                 <h1 class="hero-title">
-                    <span class="title-line">Nanbol Felix Dassak</span>
-                    <span class="title-name">Software Engineer | Game Developer | AI/ML Enthusiast</span>
+                    <span class="block">Nanbol Felix Dassak</span>
+                    <span class="block hero-role">AI Systems Architect &amp; Software Engineer</span>
                 </h1>
-                <p class="hero-description">
-                    I am Nanbol Dassak, a student software developer focused on AI, data science, and practical solutions. I work mainly with Python and web technologies, enjoy breaking down complex problems, and continuously improve by learning, experimenting, and building real projects. My long-term goal is to create impactful technology and grow into an AI engineer and tech founder. Currently running my IT program with the Plateau State Information and Communication Technology Development Agency (PITCDA).
+                <p class="hero-desc">
+                    I don't just write code; I build <strong>decision-making engines</strong>. From my current role at
+                    <strong>NNPC Limited</strong> to my work at <strong>PICTDA</strong>, I specialize in transforming
+                    "manual bottlenecks" into high-velocity automated systems.
                 </p>
-                <div class="hero-buttons">
-                    <button type="button" class="btn btn-primary hire-trigger">HIRE</button>
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                <div class="hero-actions">
+                    <button class="btn-primary hire-trigger" type="button">Hire Me</button>
+                    <a href="#projects" class="btn-ghost">View Projects</a>
+                    <a href="portfolio.html" class="btn-ghost btn-canvas-glow">
+                        <span class="canvas-glow-dot"></span> Workflow Canvas ↗
+                    </a>
                 </div>
                 <div class="achievement-chip">
-                    Winner of Clash of Devs 2.0 Game Jam Nigeria
+                    🏆 Winner — Clash of Devs 2.0 Game Jam Nigeria
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="profile-card glass">
+            <div class="hero-card-wrap">
+                <!-- floating profile card — no border -->
+                <div class="profile-card profile-card--floating">
                     <div class="profile-avatar">
-                        <img class="profile-image" src="profilepic.jpg" alt="Nanbol Felix Dassak">
+                        <img src="profilepic.jpg" alt="Nanbol Felix Dassak" class="profile-img">
                     </div>
                     <div class="profile-info">
-                        <h3>Nanbol Felix Dassak</h3>
-                        <p>Software Engineer | Game Developer</p>
+                        <h3 class="profile-name">Nanbol Felix Dassak</h3>
+                        <p class="profile-role mono">AI Systems Architect · Software Engineer</p>
+                        <div class="profile-badges">
+                            <span class="node-badge">NNPC Intern</span>
+                            <span class="node-badge">Babcock Univ.</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
+    <!-- ── ABOUT ───────────────────────────────────────── -->
+    <section id="about" class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-head">
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Focused on practical, high-impact software</p>
+                <p class="section-sub">Engineering philosophy rooted in practical utility</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <details class="about-dropdown" open>
-                        <summary>About me</summary>
-                        <p class="about-description">
-                            I am Nanbol Felix Dassak, a student software developer with a strong interest in AI, data science, and building practical solutions. I work mainly with Python and web technologies, enjoy breaking down complex problems, and continuously improve by learning, experimenting, and building real projects.
-                        </p>
-                        <p class="about-description">
-                            My long-term goal is to create impactful technology and grow into an AI engineer and tech founder. I am currently running my IT program with the Plateau State Information and Communication Technology Development Agency (PITCDA).
-                        </p>
-                    </details>
+            <div class="about-grid">
+                <div class="about-text glass">
+                    <p>
+                        I don't just write code; I build <strong>decision-making engines</strong>. From my current role
+                        at NNPC Limited to my work at PICTDA, I specialize in transforming "manual bottlenecks" into
+                        high-velocity automated systems.
+                    </p>
+                    <p>
+                        My flagship project, <strong>PR-AI</strong>, was born from observing a Senior Supervisor
+                        struggle with the sheer volume of code audits. By engineering a single-agent system that
+                        analyzes Git diffs for <strong>Security, Scalability, and Reliability</strong>, I am reducing
+                        manual audit cycles by <strong>80%</strong>.
+                    </p>
+                    <p>
+                        My engineering philosophy is rooted in practical utility: whether it's winning a Game Jam
+                        through immersive storytelling, building a custom CRUD ecosystem to scale the operations of the
+                        Tarok Nurses group, or developing a Personal Wardrobe AI to solve daily decision fatigue, I
+                        build tools that <strong>"actually matter."</strong>
+                    </p>
+                    <p class="about-focus">
+                        <span class="mono" style="color:var(--accent);">Current Focus:</span> Autonomous AI Agents, n8n
+                        Orchestration, and the intersection of LLMs with Enterprise Backend Architecture.
+                    </p>
                     <div class="about-stats">
-                        <div class="stat-item glass">
-                            <span class="stat-number">7+</span>
-                            <span class="stat-label">Projects</span>
+                        <div class="stat-box glass">
+                            <span class="stat-num accent">10+</span>
+                            <span class="stat-lbl mono">Projects</span>
                         </div>
-                        <div class="stat-item glass">
-                            <span class="stat-number">2027</span>
-                            <span class="stat-label">Graduation</span>
+                        <div class="stat-box glass">
+                            <span class="stat-num accent-2">2027</span>
+                            <span class="stat-lbl mono">Graduation</span>
                         </div>
-                        <div class="stat-item glass">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Technologies</span>
+                        <div class="stat-box glass">
+                            <span class="stat-num accent">Ubuntu</span>
+                            <span class="stat-lbl mono">Primary OS</span>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <div class="about-card glass">
-                        <div class="card-content">
-                            <h3>Education</h3>
-                            <h4>Babcock University</h4>
-                            <p>Bachelor's Degree in Software Engineering</p>
-                            <p class="graduation">Expected Graduation: 2027</p>
-                            <div class="subjects">
-                                <span class="subject">Software Architecture</span>
-                                <span class="subject">Backend Engineering</span>
-                                <span class="subject">Artificial Intelligence</span>
-                                <span class="subject">Database Design</span>
-                                <span class="subject">Software Security</span>
+                <div class="about-cards">
+                    <div class="edu-card glass">
+                        <h3 class="card-mini-title">Education</h3>
+                        <h4 class="card-uni">Babcock University</h4>
+                        <p>Bachelor's Degree in Software Engineering</p>
+                        <p class="grad-year">Expected Graduation: 2027</p>
+                        <div class="subject-pills">
+                            <span class="pill">Software Architecture</span>
+                            <span class="pill">Backend Engineering</span>
+                            <span class="pill">Artificial Intelligence</span>
+                            <span class="pill">Database Design</span>
+                            <span class="pill">Software Security</span>
+                        </div>
+                    </div>
+                    <div class="award-card glass glow-award">
+                        <span>🏆</span>
+                        <div>
+                            <h3 class="card-mini-title">Achievement</h3>
+                            <p>Winner of Clash of Devs 2.0 Game Jam Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── EXPERIENCE ──────────────────────────────────── -->
+    <section id="experience" class="section alt">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-sub">From PICTDA to NNPC — building the automation pipeline</p>
+            </div>
+            <div class="experience-timeline">
+                <!-- PICTDA -->
+                <div class="exp-card glass">
+                    <div class="exp-orb">
+                        <img src="pictda-logo.png" alt="PICTDA" class="org-logo">
+                    </div>
+                    <div class="exp-body">
+                        <span class="mono exp-date">Jan 2026 – Feb 2026</span>
+                        <h3 class="exp-title">Plateau State ICT Development Agency <span
+                                class="exp-short">(PICTDA)</span> <span class="exp-internship">(Internship)</span></h3>
+                        <p class="exp-desc">
+                            Focus on building robust backend systems and government-level web infrastructure.
+                            Sharpened production habits around Python frameworks, web delivery, and practical
+                            infrastructure thinking inside a public-sector environment.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Web Development</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-connector"></div>
+                <!-- NNPC -->
+                <div class="exp-card glass">
+                    <div class="exp-orb">
+                        <img src="nnpclogo.png" alt="NNPC" class="org-logo">
+                    </div>
+                    <div class="exp-body">
+                        <span class="mono exp-date">Feb 2026 – Present</span>
+                        <h3 class="exp-title">NNPC Limited <span class="exp-short">(Nigerian National Petroleum
+                                Company)</span> <span class="exp-internship">(Internship)</span></h3>
+                        <p class="exp-desc">
+                            Architecting internal AI agents and automated enterprise workflows to optimize operations.
+                            Orchestrated automation, AI tooling, and operational systems designed for internal use at
+                            enterprise scale.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tag accent-tag">n8n Workflows</span>
+                            <span class="tag accent-tag">AI Automation</span>
+                            <span class="tag accent-tag">OpenAI Integration</span>
+                            <span class="tag accent-tag">AI Tool Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── STATS ───────────────────────────────────────── -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">Developer Stats</h2>
+                <p class="section-sub">Live snapshots of my coding activity</p>
+            </div>
+            <!-- floating stats — no border wrapper -->
+            <div class="stats-float-grid">
+                <div class="stats-float-item">
+                    <img src="https://www.codewars.com/users/Bolitupac/badges/large" alt="Codewars badge">
+                </div>
+                <div class="stats-float-item">
+                    <a href="https://app.daily.dev/bolitupac_01" target="_blank" rel="noreferrer">
+                        <img src="https://api.daily.dev/devcards/v2/oGrQP81QRPTicqaCPh81Z.png?type=wide&r=i4y"
+                            alt="Nanbol Dassak Dev Card">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PROJECTS ─────────────────────────────────────── -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-sub">Tools that actually matter</p>
+            </div>
+
+            <!-- PR-AI AUDITOR -->
+            <div class="project-super-card glass">
+                <div class="project-super-head">
+                    <div class="prai-head-left">
+                        <img src="git-pull-ai-Logo tp bg 512.png" alt="PR-AI Logo" class="prai-logo" id="prai-logo">
+                        <div>
+                            <span class="node-badge">Super Node · Top Priority · Active</span>
+                            <h3 class="project-super-title">PR‑AI AUDITOR</h3>
+                            <p class="project-role mono">AI Code Review Platform · Laravel + OpenAI</p>
+                        </div>
+                    </div>
+                    <a href="https://pr-ai.onrender.com/auditor" target="_blank" rel="noreferrer" class="btn-execute">
+                        <img src="git-pull-ai-Logo tp bg 512.png" alt="" class="btn-logo prai-logo" aria-hidden="true">
+                        TRY LIVE DEMO →
+                    </a>
+                </div>
+                <span class="status-badge">STATUS: IN DEVELOPMENT (ACTIVE)</span>
+                <p class="project-desc prai-headline">
+                    Cut code review time by <strong>80%</strong> and review on the go.
+                </p>
+
+                <!-- What PR-AI can do — feature grid -->
+                <div class="prai-features">
+                    <h4 class="prai-features-title mono">What PR‑AI can do</h4>
+                    <div class="prai-features-grid">
+                        <div class="prai-feature-card">
+                            <span class="prai-feature-icon">🔍</span>
+                            <div>
+                                <div class="prai-feature-name">Pull Request Audit</div>
+                                <div class="prai-feature-desc">Analyzes open or merged PRs for merge readiness,
+                                    correctness, and risk — with line-level inline comments pinned to exact file paths.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prai-feature-card">
+                            <span class="prai-feature-icon">🌿</span>
+                            <div>
+                                <div class="prai-feature-name">Branch Audit</div>
+                                <div class="prai-feature-desc">Reviews branch diffs before integration — flags missing
+                                    checks, integration risk against the base branch, and pre-merge blockers.</div>
+                            </div>
+                        </div>
+                        <div class="prai-feature-card">
+                            <span class="prai-feature-icon">📜</span>
+                            <div>
+                                <div class="prai-feature-name">Commit Audit</div>
+                                <div class="prai-feature-desc">Historical post-change review focused on regression risk,
+                                    hidden side effects, rollback concerns, and follow-up fixes needed.</div>
+                            </div>
+                        </div>
+                        <div class="prai-feature-card">
+                            <span class="prai-feature-icon">🗂️</span>
+                            <div>
+                                <div class="prai-feature-name">Mermaid Impact Diagrams</div>
+                                <div class="prai-feature-desc">Generates Sequence, Flowchart, or Class diagrams
+                                    automatically to map the impact of every change in a human-readable visual.</div>
+                            </div>
+                        </div>
+                        <div class="prai-feature-card">
+                            <span class="prai-feature-icon">💬</span>
+                            <div>
+                                <div class="prai-feature-name">AI Chat on Diff Context</div>
+                                <div class="prai-feature-desc">After any audit, continue the conversation — ask
+                                    follow-up questions about the diff, security tradeoffs, or refactoring ideas with
+                                    full context retained.</div>
+                            </div>
+                        </div>
+                        <div class="prai-feature-card">
+                            <span class="prai-feature-icon">🔗</span>
+                            <div>
+                                <div class="prai-feature-name">GitHub / GitLab Import</div>
+                                <div class="prai-feature-desc">Import directly from GitHub or GitLab — paste a repo URL,
+                                    pick a PR or branch, and PR-AI fetches the diff and metadata automatically.</div>
+                            </div>
+                        </div>
+                        <div class="prai-feature-card">
+                            <span class="prai-feature-icon">🎙️</span>
+                            <div>
+                                <div class="prai-feature-name">Voice Input (Whisper)</div>
+                                <div class="prai-feature-desc">Speak your audit questions — integrated OpenAI Whisper
+                                    transcription lets you describe what you want reviewed hands-free.</div>
+                            </div>
+                        </div>
+                        <div class="prai-feature-card">
+                            <span class="prai-feature-icon">📋</span>
+                            <div>
+                                <div class="prai-feature-name">Inline Code Comments</div>
+                                <div class="prai-feature-desc">Up to 8 structured inline comment objects per audit —
+                                    each pinned to an exact file path, line number, and diff side (LEFT or RIGHT).</div>
+                            </div>
+                        </div>
+                        <div class="prai-feature-card">
+                            <span class="prai-feature-icon">🤖</span>
+                            <div>
+                                <div class="prai-feature-name">Multi-Model Support</div>
+                                <div class="prai-feature-desc">Switch between OpenAI models (gpt-4o, gpt-4o-mini, etc.)
+                                    per audit — balance speed vs. depth depending on the PR size.</div>
                             </div>
                         </div>
                     </div>
-                    <div class="highlight-card glass">
-                        <h3>Achievement</h3>
-                        <p>Winner of Clash of Devs 2.0 Game Jam Nigeria</p>
+                </div>
+                <div class="project-tech-row">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">OpenAI API</span>
+                    <span class="tag">Monaco Editor</span>
+                    <span class="tag">Diff2HTML</span>
+                    <span class="tag">Whisper</span>
+                    <span class="tag">GitHub API</span>
+                    <span class="tag">GitLab API</span>
+                    <span class="tag">Mermaid.js</span>
+                </div>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="projects-grid">
+                <div class="project-card glass">
+                    <span class="node-badge">Super Node</span>
+                    <h3 class="project-card-title">TAROK NURSES MGMT SYSTEM</h3>
+                    <p class="mono project-card-role">Healthcare CRUD Platform</p>
+                    <p class="project-card-desc">Building a custom CRUD ecosystem to scale the operations of the Tarok
+                        Nurses group — digitalizing healthcare records with secure data management and full admin
+                        workflows.</p>
+                    <div class="card-tags">
+                        <span class="tag">Native PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">CRUD Systems</span>
+                        <span class="tag">Admin Workflows</span>
+                    </div>
+                </div>
+                <div class="project-card glass">
+                    <span class="node-badge">Super Node · Side Project</span>
+                    <h3 class="project-card-title">WARDROBE PLANNER AI</h3>
+                    <p class="mono project-card-role">AI Mobile Application</p>
+                    <p class="project-card-desc">Solving daily decision fatigue with a Personal Wardrobe AI — using
+                        computer vision and LLMs to analyze personal style and plan daily outfits automatically.</p>
+                    <div class="card-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">LLMs</span>
+                        <span class="tag">Mobile UX</span>
+                    </div>
+                </div>
+                <div class="project-card glass">
+                    <span class="node-badge">Archive · Game Jam Winner 🏆</span>
+                    <h3 class="project-card-title">One Chance, Mossy Escape</h3>
+                    <p class="mono project-card-role">Godot 2D Platformer</p>
+                    <p class="project-card-desc">Won Clash of Devs 2.0 Game Jam Nigeria through immersive storytelling —
+                        a fast-paced 2D platformer with tight movement and responsive collisions.</p>
+                    <div class="card-tags">
+                        <span class="tag">Godot Engine</span>
+                        <span class="tag">2D Platformer</span>
+                        <span class="tag">Game Jam</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Bolitupac/One-Chance--Mossy-Escape" target="_blank" rel="noreferrer"
+                            class="project-link">GitHub ↗</a>
+                        <a href="https://youtu.be/55nEclETN2Q" target="_blank" rel="noreferrer"
+                            class="project-link">YouTube ↗</a>
+                    </div>
+                    <div class="project-media">
+                        <iframe src="https://www.youtube.com/embed/55nEclETN2Q" title="One Chance, Mossy Escape"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="project-card glass">
+                    <span class="node-badge">Archive Card</span>
+                    <h3 class="project-card-title">Mobile Bank App</h3>
+                    <p class="mono project-card-role">React Native / Expo</p>
+                    <p class="project-card-desc">A functional prank banking application with an OPay-inspired UI, built
+                        to practice mobile UI systems and state handling.</p>
+                    <div class="card-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">Expo</span>
+                        <span class="tag">UI Prototyping</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Bolitupac" target="_blank" rel="noreferrer"
+                            class="project-link">GitHub ↗</a>
+                    </div>
+                </div>
+                <div class="project-card glass">
+                    <span class="node-badge">Archive Card</span>
+                    <h3 class="project-card-title">Foober</h3>
+                    <p class="mono project-card-role">Food Ordering Website</p>
+                    <p class="project-card-desc">A school-based food ordering platform designed for the deaf and mute
+                        community with Paystack integration.</p>
+                    <div class="card-tags">
+                        <span class="tag">HTML</span><span class="tag">CSS</span><span
+                            class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Bolitupac/Foober" target="_blank" rel="noreferrer"
+                            class="project-link">GitHub ↗</a>
+                    </div>
+                </div>
+                <div class="project-card glass">
+                    <span class="node-badge">Archive Card</span>
+                    <h3 class="project-card-title">Army Website</h3>
+                    <p class="mono project-card-role">Concept Web Project</p>
+                    <p class="project-card-desc">A conceptual project for a proposed special rapid-response force, with
+                        a multi-page layout and security-focused storytelling.</p>
+                    <div class="card-tags">
+                        <span class="tag">HTML</span><span class="tag">CSS</span><span
+                            class="tag">JavaScript</span><span class="tag">Python</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/Bolitupac/army-website" target="_blank" rel="noreferrer"
+                            class="project-link">GitHub ↗</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="stats" class="stats">
+    <!-- ── SKILLS ──────────────────────────────────────── -->
+    <section id="skills" class="section alt">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Developer Stats</h2>
-                <p class="section-subtitle">Live snapshots of my coding activity</p>
-            </div>
-            <div class="stats-content">
-                <div class="stats-embed">
-                    <img src="https://www.codewars.com/users/Bolitupac/badges/large" alt="Codewars badge" />
-                </div>
-                <div class="stats-embed stats-wide">
-                    <a href="https://app.daily.dev/bolitupac_01"><img src="https://api.daily.dev/devcards/v2/oGrQP81QRPTicqaCPh81Z.png?type=wide&r=i4y" width="652" alt="Nanbol Dassak's Dev Card"/></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">My core development stack</p>
+            <div class="section-head">
+                <h2 class="section-title">Skills &amp; Technologies</h2>
+                <p class="section-sub">My core development stack</p>
             </div>
             <div class="skills-grid">
-                <div class="skill-category glass">
-                    <h3 class="category-title">Programming Languages</h3>
-                    <div class="skill-items">
+                <div class="skill-card glass">
+                    <h3 class="skill-cat accent">Programming Languages</h3>
+                    <div class="skill-list">
                         <div class="skill-item">Python</div>
                         <div class="skill-item">JavaScript</div>
                         <div class="skill-item">PHP</div>
@@ -180,223 +498,339 @@
                         <div class="skill-item">C++</div>
                     </div>
                 </div>
-                <div class="skill-category glass">
-                    <h3 class="category-title">Backend & AI</h3>
-                    <div class="skill-items">
+                <div class="skill-card glass">
+                    <h3 class="skill-cat accent-2">AI &amp; Automation</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">OpenAI Integration</div>
+                        <div class="skill-item">n8n Orchestration</div>
+                        <div class="skill-item">AI Prompt Engineering</div>
+                        <div class="skill-item">Autonomous Agents</div>
+                    </div>
+                </div>
+                <div class="skill-card glass">
+                    <h3 class="skill-cat accent">Backend &amp; Systems</h3>
+                    <div class="skill-list">
                         <div class="skill-item">Django</div>
                         <div class="skill-item">Flask</div>
-                        <div class="skill-item">AI Integration</div>
-                        <div class="skill-item">AI Prompt Engineering</div>
+                        <div class="skill-item">Laravel (PHP)</div>
+                        <div class="skill-item">REST API Design</div>
                     </div>
                 </div>
-                <div class="skill-category glass">
-                    <h3 class="category-title">Game Development</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Godot Engine</div>
-                        <div class="skill-item">2D Platformers</div>
-                        <div class="skill-item">Game Jam Prototyping</div>
-                    </div>
-                </div>
-                <div class="skill-category glass">
-                    <h3 class="category-title">Databases & Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Database Design</div>
+                <div class="skill-card glass">
+                    <h3 class="skill-cat accent-2">Data &amp; Tools</h3>
+                    <div class="skill-list">
                         <div class="skill-item">MySQL</div>
-                        <div class="skill-item">Git & GitHub</div>
-                        <div class="skill-item">API Integration</div>
+                        <div class="skill-item">Database Design</div>
+                        <div class="skill-item">Git &amp; GitHub</div>
+                        <div class="skill-item">Godot Engine</div>
+                        <div class="skill-item skill-item--ubuntu">🐧 Linux (Ubuntu) — Primary OS</div>
                     </div>
                 </div>
             </div>
-            <div class="learning-focus glass">
+            <div class="current-focus glass">
                 <h3 class="focus-title">Current Focus</h3>
-                <div class="focus-items">
-                    <div class="focus-item">AI Integration</div>
-                    <div class="focus-item">Django</div>
-                    <div class="focus-item">Flask</div>
-                    <div class="focus-item">Advanced Godot</div>
+                <div class="focus-pills">
+                    <span class="focus-pill">Autonomous AI Agents</span>
+                    <span class="focus-pill">n8n Orchestration</span>
+                    <span class="focus-pill">LLMs + Enterprise Backend</span>
+                    <span class="focus-pill">AI Development</span>
+                    <span class="focus-pill">OpenAI Tooling</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <!-- ── INTERESTS ─────────────────────────────────── -->
+    <section id="interests" class="section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Selected work across web, AI, and games</p>
+            <div class="section-head">
+                <h2 class="section-title">Beyond the Code</h2>
+                <p class="section-sub">What I do when I'm not building systems</p>
             </div>
-            <div class="projects-grid">
-                <div class="project-card glass">
-                    <div class="project-header">
-                        <h3 class="project-title">One Chance, Mossy Escape</h3>
-                        <p class="project-role">Godot 2D Platformer</p>
+            <div class="interests-grid">
+                <!-- Gaming -->
+                <div class="interest-card glass">
+                    <div class="interest-header">
+                        <span class="interest-icon">🎮</span>
+                        <h3 class="interest-title">Gaming</h3>
                     </div>
-                    <p class="project-description">
-                        A fast-paced 2D platformer built in Godot with tight movement, responsive collisions, and a focus on replayability.
-                    </p>
-                    <div class="project-media">
-                        <iframe src="https://www.youtube.com/embed/55nEclETN2Q" title="One Chance, Mossy Escape" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://itch.io" target="_blank" class="project-link">itch.io</a>
-                        <a href="https://youtu.be/55nEclETN2Q" target="_blank" class="project-link">YouTube</a>
-                    </div>
-                </div>
-
-                <div class="project-card glass">
-                    <div class="project-header">
-                        <h3 class="project-title">Mobile Bank App</h3>
-                        <p class="project-role">React Native / Expo</p>
-                    </div>
-                    <p class="project-description">
-                        A functional prank banking application with an OPay-inspired UI, built to practice mobile UI systems and state handling.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Expo</span>
-                        <span class="tech-tag">UI Prototyping</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Bolitupac" target="_blank" class="project-link">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card glass">
-                    <div class="project-header">
-                        <h3 class="project-title">Foober</h3>
-                        <p class="project-role">Food Ordering Website</p>
-                    </div>
-                    <p class="project-description">
-                        A school-based food ordering platform designed for the deaf and mute community with Paystack integration.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Bolitupac/Foober" target="_blank" class="project-link">GitHub</a>
+                    <p class="interest-desc">Strategy, simulation, and racing games are my escape. I play across
+                        multiple genres — from city planning to motorsport.</p>
+                    <div class="interest-games">
+                        <div class="game-chip">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Roblox_player_icon_black.svg/64px-Roblox_player_icon_black.svg.png"
+                                alt="Roblox" class="game-logo game-logo--invert" onerror="this.style.display='none'">
+                            <span>Roblox</span>
+                        </div>
+                        <div class="game-chip">
+                            <img src="https://cdn2.steamgriddb.com/icon/0a3956e0cafc7d55ae2a41e18e5b3ede/32/256x256.png"
+                                alt="Software Inc" class="game-logo" onerror="this.style.display='none'">
+                            <span>Software Inc</span>
+                        </div>
+                        <div class="game-chip">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/80px-F1.svg.png"
+                                alt="F1" class="game-logo" onerror="this.style.display='none'">
+                            <span>F1</span>
+                        </div>
+                        <div class="game-chip">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/EFootball_logo.svg/120px-EFootball_logo.svg.png"
+                                alt="eFootball" class="game-logo" onerror="this.style.display='none'">
+                            <span>eFootball</span>
+                        </div>
+                        <div class="game-chip">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/2022_MotoGP_Logo.svg/120px-2022_MotoGP_Logo.svg.png"
+                                alt="MotoGP" class="game-logo" onerror="this.style.display='none'">
+                            <span>MotoGP</span>
+                        </div>
+                        <div class="game-chip">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Cities_Skylines_cover.jpg/120px-Cities_Skylines_cover.jpg"
+                                alt="Cities Skylines" class="game-logo" onerror="this.style.display='none'">
+                            <span>Cities Skylines</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="project-card glass">
-                    <div class="project-header">
-                        <h3 class="project-title">Army Website</h3>
-                        <p class="project-role">Concept Web Project</p>
+                <!-- Chess -->
+                <div class="interest-card glass">
+                    <div class="interest-header">
+                        <span class="interest-icon">♟️</span>
+                        <h3 class="interest-title">Chess</h3>
                     </div>
-                    <p class="project-description">
-                        A conceptual project for a proposed special rapid-response force, featuring a multi-page layout and security-focused storytelling.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Python</span>
+                    <p class="interest-desc">Chess sharpens systems thinking. The same logic that governs openings
+                        applies to architecture decisions — control the center, think three moves ahead.</p>
+                    <div class="interest-games">
+                        <div class="game-chip">
+                            <img src="https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/PedroPinhata/phpkXK09k.png"
+                                alt="Chess.com" class="game-logo" onerror="this.style.display='none'">
+                            <span>Chess.com</span>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Bolitupac/army-website" target="_blank" class="project-link">GitHub</a>
+                </div>
+                <!-- Documentaries & Tech -->
+                <div class="interest-card glass">
+                    <div class="interest-header">
+                        <span class="interest-icon">📺</span>
+                        <h3 class="interest-title">Documentaries &amp; Tech Reviews</h3>
+                    </div>
+                    <p class="interest-desc">I love watching documentaries — history, science, engineering. Also a deep
+                        consumer of tech product reviews, especially hardware breakdowns and AI research coverage.</p>
+                </div>
+                <!-- Drones & Military -->
+                <div class="interest-card glass">
+                    <div class="interest-header">
+                        <span class="interest-icon">🚁</span>
+                        <h3 class="interest-title">Drones &amp; Military Tech</h3>
+                    </div>
+                    <p class="interest-desc">Fascinated by autonomous aerial systems and defense tech — from DJI's
+                        consumer drone engineering to advanced military platforms like those from Lockheed Martin.</p>
+                    <div class="interest-games">
+                        <div class="game-chip">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/DJI_Innovations_logo.svg/120px-DJI_Innovations_logo.svg.png"
+                                alt="DJI" class="game-logo game-logo--white" onerror="this.style.display='none'">
+                            <span>DJI</span>
+                        </div>
+                        <div class="game-chip">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Lockheed_Martin_logo.svg/120px-Lockheed_Martin_logo.svg.png"
+                                alt="Lockheed Martin" class="game-logo" onerror="this.style.display='none'">
+                            <span>Lockheed Martin</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <!-- ── CONTACT ─────────────────────────────────────── -->
+    <section id="contact" class="section alt">
         <div class="container">
-            <div class="section-header">
+            <div class="section-head">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Open to collaborations and freelance work</p>
+                <p class="section-sub">Open to collaborations and freelance work</p>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item glass">
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="mailto:nanboldassak2@gmail.com">nanboldassak2@gmail.com</a>
-                        </div>
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <div class="contact-card glass contact-card--x">
+                        <div class="contact-label">X (Twitter) <span class="active-badge">● Active</span></div>
+                        <a href="https://x.com/bolitupac" target="_blank" rel="noreferrer">x.com/bolitupac</a>
+                        <p class="x-note">I'm active on X and always respond — DM me anytime.</p>
                     </div>
-                    <div class="contact-item glass">
-                        <div class="contact-details">
-                            <h3>Upwork</h3>
-                            <a href="https://www.upwork.com/freelancers/~01fee90c3712a0d94f" target="_blank">upwork.com/freelancers/~01fee90c3712a0d94f</a>
-                        </div>
+                    <div class="contact-card glass">
+                        <div class="contact-label">Email</div><a
+                            href="mailto:nanboldassak2@gmail.com">nanboldassak2@gmail.com</a>
                     </div>
-                    <div class="contact-item glass">
-                        <div class="contact-details">
-                            <h3>Kwork</h3>
-                            <a href="https://kwork.com/user/nanboldassak2" target="_blank">kwork.com/user/nanboldassak2</a>
-                        </div>
+                    <div class="contact-card glass">
+                        <div class="contact-label">Upwork</div><a
+                            href="https://www.upwork.com/freelancers/~01fee90c3712a0d94f" target="_blank"
+                            rel="noreferrer">upwork.com/freelancers/~01fee…</a>
                     </div>
-                    <div class="contact-item glass">
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <a href="https://linkedin.com/in/nanbol-dassak-444090292" target="_blank">linkedin.com/in/nanbol-dassak-444090292</a>
-                        </div>
+                    <div class="contact-card glass">
+                        <div class="contact-label">Kwork</div><a href="https://kwork.com/user/nanboldassak2"
+                            target="_blank" rel="noreferrer">kwork.com/user/nanboldassak2</a>
                     </div>
-                    <div class="contact-item glass">
-                        <div class="contact-details">
-                            <h3>GitHub</h3>
-                            <a href="https://github.com/Bolitupac" target="_blank">github.com/Bolitupac</a>
-                        </div>
+                    <div class="contact-card glass">
+                        <div class="contact-label">LinkedIn</div><a
+                            href="https://linkedin.com/in/nanbol-dassak-444090292" target="_blank"
+                            rel="noreferrer">linkedin.com/in/nanbol-dassak</a>
+                    </div>
+                    <div class="contact-card glass">
+                        <div class="contact-label">GitHub</div><a href="https://github.com/Bolitupac" target="_blank"
+                            rel="noreferrer">github.com/Bolitupac</a>
+                    </div>
+                    <div class="contact-card glass">
+                        <div class="contact-label">Telegram</div><a href="https://t.me/Bolitupac" target="_blank"
+                            rel="noreferrer">t.me/Bolitupac</a>
                     </div>
                 </div>
                 <div class="contact-form glass">
-                    <form class="form" action="https://formspree.io/f/xldnvdeb" method="POST">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <p class="form-intro">Send me a message. This message will be delivered to my email automatically
+                        using a 3rd party service.</p>
+                    <form action="https://formspree.io/f/xldnvdeb" method="POST">
+                        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Your Email" required>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div class="form-group"><textarea name="message" rows="5" placeholder="Your Message"
+                                required></textarea></div>
+                        <button type="submit" class="btn-primary">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="hire-modal" id="hireModal" aria-hidden="true">
-        <div class="hire-modal__backdrop" data-close-modal></div>
-        <div class="hire-modal__panel glass" role="dialog" aria-modal="true" aria-labelledby="hireTitle">
-            <div class="hire-modal__header">
-                <h3 id="hireTitle">I will be happy to work with you</h3>
-                <button type="button" class="hire-modal__close" data-close-modal aria-label="Close">×</button>
-            </div>
-            <p class="hire-modal__subtitle">Choose your preferred platform.</p>
-            <div class="hire-modal__actions">
-                <a href="https://www.upwork.com/freelancers/~01fee90c3712a0d94f" target="_blank" class="btn btn-primary">Upwork</a>
-                <a href="https://kwork.com/user/nanboldassak2" target="_blank" class="btn btn-secondary">Kwork</a>
-                <a href="mailto:nanboldassak2@gmail.com" class="btn btn-secondary">Email</a>
-                <a href="https://t.me/Bolitupac" target="_blank" class="btn btn-secondary">DM (Telegram)</a>
-                <a href="#contact" class="btn btn-secondary" data-close-modal>Contact Message</a>
+    <!-- ── FOLLOW ──────────────────────────────────────── -->
+    <section class="follow-section" id="follow-section">
+        <div class="container">
+            <div class="follow-inner">
+                <div>
+                    <span class="node-badge">Follow Node</span>
+                    <h2 class="follow-headline">Follow my Journey on X</h2>
+                    <p class="follow-desc">I'm active on X and <strong>always respond</strong> — building in public,
+                        sharing automation experiments, AI products, and open to collabs.</p>
+                </div>
+                <div class="follow-links">
+                    <a href="https://x.com/bolitupac" target="_blank" rel="noreferrer" class="btn-accent">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+                            style="margin-right:6px;vertical-align:-2px">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                        Follow on X (Always Active)
+                    </a>
+                    <a href="https://linkedin.com/in/nanbol-dassak-444090292" target="_blank" rel="noreferrer"
+                        class="btn-ghost">LinkedIn</a>
+                    <a href="https://github.com/Bolitupac" target="_blank" rel="noreferrer" class="btn-ghost">GitHub</a>
+                    <a href="mailto:nanboldassak2@gmail.com" class="btn-ghost">Email</a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="weather-layer snow-layer" aria-hidden="true"></div>
+    <p class="interests-label">Below are my interests</p>
 
+    <section class="belt-section">
+        <div class="belt-fade belt-fade--left"></div>
+        <div class="belt-fade belt-fade--right"></div>
+        <div class="belt-track-wrap" aria-hidden="true">
+            <div class="belt-track" id="belt-track">
+                <!-- item set A -->
+                <div class="belt-item"><img src="assets/logos/DJI_Innovations_logo.svg" alt="DJI" class="belt-logo belt-logo--white" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/DJI_Innovations_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/lockheedmartinlogo.svg" alt="Lockheed Martin" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/9/9e/Lockheed_Martin_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Tesla_Motors.svg" alt="Tesla" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Intuitive_Surgical_logo.svg" alt="Intuitive Surgical" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/apple-black-logo-svgrepo-com.svg" alt="Apple" class="belt-logo belt-logo--invertable" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Alienware-logo-500x281.png" alt="Dell Alienware" class="belt-logo belt-logo--white" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/d/d5/Alienware_2021_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Seal_of_the_President_of_Nigeria.svg" alt="Nigeria Presidency" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/7/7a/Coat_of_arms_of_Nigeria.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Chelsea_FC.svg" alt="Chelsea FC" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Canonical Ubuntu.svg" alt="Ubuntu" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-ubuntu_cof-orange-hex.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Rockstar_Games_Logo.svg" alt="Rockstar Games" class="belt-logo belt-logo--white" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/b/bc/Rockstar_Games_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/google-icon-logo-svgrepo-com.svg" alt="Google" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Roblox_Logo_2022.svg" alt="Roblox" class="belt-logo belt-logo--invertable" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/byd-logo.svg" alt="BYD" class="belt-logo belt-logo--light-white-dark-black" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/3/32/BYD_auto_logo_2023.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Microsoft_logo_(2012).svg" alt="Microsoft" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/NVIDIA_logo.svg" alt="NVIDIA" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/SpaceX_logo_black.svg" alt="SpaceX" class="belt-logo belt-logo--light-black-dark-white" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/brandbird-Brave-logomark.svg" alt="Brave" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/brandbird-Dribbble-logomark.svg" alt="Dribbble" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/brandbird-GitHub-logomark.svg" alt="GitHub" class="belt-logo belt-logo--invertable" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/brandbird-YouTube-logomark.svg" alt="YouTube" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/bridgemind.avif" alt="BridgeMind AI" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/2024_Spotify_Logo.svg" alt="Spotify" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/landscape-lockup.svg" alt="Landscape" class="belt-logo" loading="lazy"></div>
+                <!-- item set B (duplicate for seamless loop) -->
+                <div class="belt-item"><img src="assets/logos/DJI_Innovations_logo.svg" alt="DJI" class="belt-logo belt-logo--white" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/DJI_Innovations_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/lockheedmartinlogo.svg" alt="Lockheed Martin" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/9/9e/Lockheed_Martin_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Tesla_Motors.svg" alt="Tesla" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Intuitive_Surgical_logo.svg" alt="Intuitive Surgical" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/apple-black-logo-svgrepo-com.svg" alt="Apple" class="belt-logo belt-logo--invertable" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Alienware-logo-500x281.png" alt="Dell Alienware" class="belt-logo belt-logo--white" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/d/d5/Alienware_2021_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Seal_of_the_President_of_Nigeria.svg" alt="Nigeria Presidency" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/7/7a/Coat_of_arms_of_Nigeria.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Chelsea_FC.svg" alt="Chelsea FC" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Canonical Ubuntu.svg" alt="Ubuntu" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-ubuntu_cof-orange-hex.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Rockstar_Games_Logo.svg" alt="Rockstar Games" class="belt-logo belt-logo--white" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/b/bc/Rockstar_Games_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/google-icon-logo-svgrepo-com.svg" alt="Google" class="belt-logo" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Roblox_Logo_2022.svg" alt="Roblox" class="belt-logo belt-logo--invertable" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/byd-logo.svg" alt="BYD" class="belt-logo belt-logo--light-white-dark-black" loading="lazy" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/3/32/BYD_auto_logo_2023.svg';"></div>
+                <div class="belt-item"><img src="assets/logos/Microsoft_logo_(2012).svg" alt="Microsoft" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/NVIDIA_logo.svg" alt="NVIDIA" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/SpaceX_logo_black.svg" alt="SpaceX" class="belt-logo belt-logo--light-black-dark-white" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/brandbird-Brave-logomark.svg" alt="Brave" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/brandbird-Dribbble-logomark.svg" alt="Dribbble" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/brandbird-GitHub-logomark.svg" alt="GitHub" class="belt-logo belt-logo--invertable" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/brandbird-YouTube-logomark.svg" alt="YouTube" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/bridgemind.avif" alt="BridgeMind AI" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/2024_Spotify_Logo.svg" alt="Spotify" class="belt-logo" loading="lazy"></div>
+                <div class="belt-item"><img src="assets/logos/landscape-lockup.svg" alt="Landscape" class="belt-logo" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ──────────────────────────────────────── -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2026 Nanbol Felix Dassak. All rights reserved.</p>
-                    <a target="_blank" href="https://icons8.com/icon/sffoN5JHkgV3/greek-helmet">Greek Helmet</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/Bolitupac" target="_blank">GitHub</a>
-                    <a href="https://kwork.com/user/nanboldassak2" target="_blank">Kwork</a>
-                    <a href="https://linkedin.com/in/nanbol-dassak-444090292" target="_blank">LinkedIn</a>
-                    <a href="https://x.com/bolitupac" target="_blank">Twitter</a>
-                </div>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Nanbol Felix Dassak. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Bolitupac" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://x.com/bolitupac" target="_blank" rel="noreferrer">X / Twitter</a>
+                <a href="https://linkedin.com/in/nanbol-dassak-444090292" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="portfolio.html">Canvas View</a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ── HIRE MODAL ──────────────────────────────────── -->
+    <div id="hire-modal" class="modal-backdrop" aria-hidden="true">
+        <div class="modal-panel glass">
+            <div class="modal-header">
+                <h3>I will be happy to work with you</h3>
+                <button type="button" class="modal-close" id="modal-close" aria-label="Close">×</button>
+            </div>
+            <p class="modal-sub">Choose your preferred platform.</p>
+            <div class="modal-actions">
+                <a href="https://www.upwork.com/freelancers/~01fee90c3712a0d94f" target="_blank" rel="noreferrer"
+                    class="btn-primary">Upwork</a>
+                <a href="https://kwork.com/user/nanboldassak2" target="_blank" rel="noreferrer"
+                    class="btn-ghost">Kwork</a>
+                <a href="mailto:nanboldassak2@gmail.com" class="btn-ghost">Email</a>
+                <a href="https://t.me/Bolitupac" target="_blank" rel="noreferrer" class="btn-ghost">Telegram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── FAB ─────────────────────────────────────────── -->
+    <div class="fab-wrap" id="fab-wrap">
+        <div class="fab-label">AI Assistant coming soon…</div>
+        <button type="button" class="fab-btn" aria-label="AI Bot placeholder">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                <circle cx="12" cy="5" r="1" fill="currentColor" />
+                <circle cx="9" cy="16" r="1" fill="currentColor" />
+                <circle cx="15" cy="16" r="1" fill="currentColor" />
+            </svg>
+        </button>
+    </div>
+
+    <script src="portfolio.js"></script>
 </body>
+
 </html>
