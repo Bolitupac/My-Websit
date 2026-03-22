@@ -61,6 +61,14 @@
             </div>
 
             <div class="canvas-body">
+                <!-- Mobile-only blocker: inform users canvas isn't supported on small screens -->
+                <div class="canvas-mobile-blocker" id="canvas-mobile-blocker" aria-hidden="true">
+                    <div style="max-width:520px;margin:40px auto;text-align:center;">
+                        <h3 style="font-size:20px;margin-bottom:8px;">Mobile Not Supported</h3>
+                        <p style="color:var(--muted);margin-bottom:18px;">The Workflow Canvas requires a larger screen to interact with nodes, pan, and zoom. Please open this page on a desktop or laptop for the best experience.</p>
+                        <a href="index.html" class="btn-ghost">Return to Classic View</a>
+                    </div>
+                </div>
                 <!-- LEFT: Canvas -->
                 <div class="canvas-wrap" id="canvas-wrap">
                     <div class="canvas-hint" id="canvas-hint-top">

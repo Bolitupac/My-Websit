@@ -529,7 +529,10 @@ body {
     .nav-canvas-glow { border-radius: 12px; }
     .hamburger { display: flex; }
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-card-wrap { order: -1; }
+    /* keep profile card below the hero text on mobile */
+    .hero-card-wrap { order: 1; }
+    /* hide canvas/canvas-glow links on mobile — Workflow Canvas not available on small screens */
+    .nav-canvas-glow, .btn-canvas-glow { display: none !important; }
     .about-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
 }
@@ -697,10 +700,11 @@ body {
 }
 
 .belt-logo--light-white-dark-black {
-    filter: brightness(10) saturate(0); /* white in light mode */
+    /* make BYD appear black by default (light mode), white in dark mode */
+    filter: brightness(0) saturate(0); /* black by default (light) */
 }
 [data-theme="dark"] .belt-logo--light-white-dark-black {
-    filter: brightness(0) saturate(0); /* black in dark mode */
+    filter: brightness(10) saturate(0); /* white in dark mode */
 }
 
 .belt-logo--light-black-dark-white {

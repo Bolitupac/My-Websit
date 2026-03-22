@@ -658,4 +658,11 @@ main { max-width: 1600px; margin: 0 auto; padding: 28px 24px 48px; }
     .overlay-header { top: -18px; }
     .header-inner { padding: 12px 16px; }
     .header-name { font-size: 16px; }
+
+    /* On small screens, hide interactive canvas and show blocker message */
+    .canvas-wrap, .property-panel { display: none !important; }
+    .canvas-mobile-blocker { display: block; }
 }
+
+/* default: hide the mobile blocker until small screens */
+.canvas-mobile-blocker { display: none; }
