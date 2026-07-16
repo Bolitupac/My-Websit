@@ -152,22 +152,29 @@ document.addEventListener('DOMContentLoaded', () => {
         chatWindow.classList.remove('active');
     }
 
-    // FAB = maximize / open
-    fabBtn.addEventListener('click', openChat);
+    // FAB logo clicks toggle the chat minimized/maximized state
+    fabBtn.addEventListener('click', () => {
+        const isActive = chatWindow.classList.contains('active');
+        if (isActive) {
+            closeChat();
+        } else {
+            openChat();
+        }
+    });
 
-    // X button = minimize / close
+    // X close button strictly minimizes the chat
     if (chatClose) {
         chatClose.addEventListener('click', closeChat);
     }
 
     const assistantAnswers = {
-        "default": "I'm Nanbol's AI Assistant. You can ask me about his projects (PR-AI Auditor, Tarok Nurses System, Mossy Escape), experience (GDG Babcock, NNPC, PICTDA), or skills!",
-        "pr-ai": "PR-AI Auditor is Nanbol's flagship project. It's an AI-powered code review platform built using Laravel, OpenAI API, Monaco Editor, and Diff2HTML. It reduces manual code review time by up to 80% with precise line-level feedback.",
-        "gdg": "Nanbol is the Technical Co-lead at GDG on Campus Babcock (July 2026 – Present). He co-leads the dev team to build and ship campus projects, using project management, technical leadership, and Git collaboration skills.",
-        "nnpc": "Nanbol was an AI & Automation intern at NNPC Limited (Feb 2026 – June 2026), where he built internal AI agents and automated workflows with n8n and OpenAI integrations.",
-        "pictda": "Nanbol interned at Plateau State ICT Development Agency (PICTDA) from Jan 2026 to Feb 2026, focusing on Django, Flask, and robust government-level backend systems.",
-        "skills": "Nanbol's core skills include:\n- Backend: Python, Django, Flask, PHP, Laravel, REST APIs\n- AI & Automation: n8n workflows, OpenAI Integration, LLM Tooling\n- Data & Tools: MySQL, phpMyAdmin, Brevo, Git, Linux (Ubuntu)",
-        "contact": "You can connect with Nanbol via:\n- Email: nanboldassak2@gmail.com\n- GitHub: github.com/Bolitupac\n- LinkedIn: linkedin.com/in/nanbol-dassak-444090292\n- X: x.com/bolitupac"
+        "default": "I'm Bolitupac AI. You can ask me about projects (PR-AI Auditor, Tarok Nurses System, Mossy Escape), experience (GDG Babcock, NNPC, PICTDA), or skills!",
+        "pr-ai": "PR-AI Auditor is my flagship project. It's an AI-powered code review platform built using Laravel, OpenAI API, Monaco Editor, and Diff2HTML. It reduces manual code review time by up to 80% with precise line-level feedback.",
+        "gdg": "I am the Technical Co-lead at GDG on Campus Babcock (July 2026 – Present). I co-lead the dev team to build and ship campus projects, using project management, technical leadership, and Git collaboration skills.",
+        "nnpc": "I was an AI & Automation intern at NNPC Limited (Feb 2026 – June 2026), where I built internal AI agents and automated workflows with n8n and OpenAI integrations.",
+        "pictda": "I interned at Plateau State ICT Development Agency (PICTDA) from Jan 2026 to Feb 2026, focusing on Django, Flask, and robust government-level backend systems.",
+        "skills": "My core skills include:\n- Backend: Python, Django, Flask, PHP, Laravel, REST APIs\n- AI & Automation: n8n workflows, OpenAI Integration, LLM Tooling\n- Data & Tools: MySQL, phpMyAdmin, Brevo, Git, Linux (Ubuntu)",
+        "contact": "You can connect with me via:\n- Email: nanboldassak2@gmail.com\n- GitHub: github.com/Bolitupac\n- LinkedIn: linkedin.com/in/nanbol-dassak-444090292\n- X: x.com/bolitupac"
     };
 
     function getAIResponse(query) {
@@ -218,18 +225,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter') handleSend();
         });
     }
-
-    // Quick replies
-    document.querySelectorAll('.quick-reply-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const query = this.getAttribute('data-query');
-            if (query) {
-                appendMessage(query, 'user');
-                const reply = getAIResponse(query);
-                setTimeout(() => appendMessage(reply, 'system'), 300);
-            }
-        });
-    });
 });
 
 console.log('Portfolio classic page loaded. NFD theme active.');

@@ -1077,7 +1077,7 @@ body {
 }
 
 /* ── DISCUSSION & ABOUT GRID ───────────────────── */
-.disc-grid {
+.about-disc-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -1093,51 +1093,94 @@ body {
 .highlights-cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
 }
-.hl-card {
-    background: linear-gradient(135deg, #ff9f1c, #ffb703);
-    border: none;
+.highlight-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--line-strong);
     border-radius: var(--radius);
     padding: 32px;
-    color: #121212;
+    color: var(--text);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 250px;
-    box-shadow: 0 16px 40px rgba(255, 159, 28, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: flex-start;
+    min-height: 280px;
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.hl-card:hover {
+[data-theme="light"] .highlight-card {
+    background: rgba(21, 24, 33, 0.02);
+}
+.highlight-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 48px rgba(255, 159, 28, 0.28);
+    border-color: var(--accent);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+.highlight-card--solid {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 16px 40px rgba(234, 75, 113, 0.15);
+}
+.highlight-card--solid:hover {
+    box-shadow: 0 20px 48px rgba(234, 75, 113, 0.28);
+    border-color: transparent;
 }
 .hl-card-icon {
-    font-size: 36px;
-    margin-bottom: 24px;
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
 }
 .hl-card-title {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 800;
-    margin-bottom: 10px;
-    line-height: 1.2;
+    margin-bottom: 12px;
+    line-height: 1.25;
+}
+.highlight-card--solid .hl-card-title {
+    color: #ffffff;
 }
 .hl-card-desc {
     font-size: 14px;
-    opacity: 0.9;
+    color: var(--muted);
     line-height: 1.6;
+    margin-bottom: 24px;
 }
-.hl-card-stat {
+.highlight-card--solid .hl-card-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+.hl-card-meta {
     font-family: var(--font-mono);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin-top: auto;
-    padding-top: 20px;
-    border-top: 1px solid rgba(18, 18, 18, 0.1);
+    padding-top: 16px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--accent);
+    display: inline-block;
+}
+.highlight-card--solid .hl-card-meta {
+    color: #ffffff;
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── ABOUT SECONDARY ROW ───────────────────────── */
+.about-secondary-row {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 30px;
+    margin-top: 30px;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .about-secondary-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 /* ── FLOATING CHATBOT UI ───────────────────────── */
@@ -1315,12 +1358,17 @@ body {
         order: 3;
     }
     .highlights-cards-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    .disc-grid {
+    .about-disc-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .highlights-cards-grid {
+        grid-template-columns: 1fr;
     }
 }
 @media (max-width: 480px) {
