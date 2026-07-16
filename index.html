@@ -17,8 +17,11 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bolitupac.github.io/My-Websit/portfolio.html">
     <meta property="og:image" content="https://bolitupac.github.io/My-Websit/profilepic.jpg">
-    <link rel="icon" type="image/png" href="icons8-greek-helmet-96.png">
-    <link rel="apple-touch-icon" href="icons8-greek-helmet-96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -319,8 +322,13 @@
     <nav id="site-nav">
         <div class="nav-inner">
             <div class="nav-brand">
-                <span class="mono brand-tag">NFD</span>
-                <span class="brand-name">Nanbol Dassak</span>
+                <div class="logo-mark">
+                    <svg viewBox="0 0 100 100" class="logo-svg">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="12"></circle>
+                        <path d="M 50 10 A 40 40 0 0 1 90 50 L 50 50 Z" fill="currentColor"></path>
+                    </svg>
+                </div>
+                <span class="brand-name">Nanbol Dassak.</span>
             </div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -348,114 +356,118 @@
     <!-- ── HERO ────────────────────────────────────────── -->
     <section id="home" class="hero-section">
         <div class="dot-grid"></div>
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <span class="mono label-tag">AI SYSTEMS ARCHITECT · AUTOMATION ENGINEER</span>
-                <div class="code-sig"><span class="mono">#D45SAK <span class="code-sig-accent">NF</span></span></div>
-                <h1 class="hero-title">
-                    <span class="block">Nanbol Felix Dassak</span>
-                    <span class="block hero-role">AI Systems Architect &amp; Software Engineer</span>
-                </h1>
-                <p class="hero-desc">
-                    I don't just write code; I build <strong>decision-making engines</strong>. From my current role at
-                    <strong>NNPC Limited</strong> to my work at <strong>PICTDA</strong>, I specialize in transforming
-                    "manual bottlenecks" into high-velocity automated systems.
-                </p>
-                <div class="hero-actions">
-                    <button class="btn-primary hire-trigger" type="button">Hire Me</button>
-                    <a href="#projects" class="btn-ghost">View Projects</a>
-                    <a href="portfolio.html" class="btn-ghost btn-canvas-glow">
-                        <span class="canvas-glow-dot"></span> Workflow Canvas ↗
+        <div class="container hero-grid-new">
+            <!-- Left Column: Name & Socials -->
+            <div class="hero-name-col">
+                <h1 class="hero-title-new">Nanbol<br>Dassak.</h1>
+                <div class="hero-divider"></div>
+                <div class="hero-socials">
+                    <a href="https://x.com/bolitupac" target="_blank" rel="noreferrer" class="social-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://github.com/Bolitupac" target="_blank" rel="noreferrer" class="social-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/nanbol-dassak-444090292" target="_blank" rel="noreferrer" class="social-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
                 </div>
-                <div class="achievement-chip">
-                    🏆 Winner — Clash of Devs 2.0 Game Jam Nigeria
-                </div>
             </div>
-            <div class="hero-card-wrap">
-                <!-- floating profile card — no border -->
-                <div class="profile-card profile-card--floating">
-                    <div class="profile-avatar">
-                        <img src="profilepic.jpg" alt="Nanbol Felix Dassak" class="profile-img">
-                    </div>
-                    <div class="profile-info">
-                        <h3 class="profile-name">Nanbol Felix Dassak</h3>
-                        <p class="profile-role mono">AI Systems Architect · Software Engineer</p>
-                        <div class="profile-badges">
-                            <span class="node-badge">NNPC Intern</span>
-                            <span class="node-badge">Babcock Univ.</span>
-                        </div>
-                    </div>
-                </div>
+
+            <!-- Center Column: Profile Image Cutout -->
+            <div class="hero-image-col">
+                <img src="assets/images/nanbol_standing.png" alt="Nanbol Felix Dassak" class="hero-new-img">
+            </div>
+
+            <!-- Right Column: Intro Info -->
+            <div class="hero-intro-col">
+                <span class="intro-tag">— Introduction</span>
+                <h2 class="intro-headline">AI Systems Architect &amp; Software Engineer, based in Nigeria.</h2>
+                <p class="intro-text">
+                    I build decision-making engines — autonomous agents, enterprise automation, and AI-first backend systems.
+                </p>
+                <a href="#about" class="intro-story-link">My story <span class="arrow-icon">→</span></a>
             </div>
         </div>
     </section>
 
-    <!-- ── ABOUT ───────────────────────────────────────── -->
-    <section id="about" class="section">
+    <!-- ── ABOUT & DISCUSSION ──────────────────────────── -->
+    <section id="about" class="section about-discussion-section">
         <div class="container">
-            <div class="section-head">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-sub">Engineering philosophy rooted in practical utility</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-text glass">
-                    <p>
-                        I don't just write code; I build <strong>decision-making engines</strong>. From my current role
-                        at NNPC Limited to my work at PICTDA, I specialize in transforming "manual bottlenecks" into
-                        high-velocity automated systems.
+            <div class="about-disc-grid">
+                <!-- Left: Contact & Discussion -->
+                <div class="disc-left-col">
+                    <span class="intro-tag">— Contact</span>
+                    <h2 class="disc-title">Any Type Of Query &amp; Discussion.</h2>
+                    <p class="disc-desc">
+                        Feel free to reach out for collaborations, freelance work, or system design consulting. Let's build tools that "actually matter."
                     </p>
-                    <p>
-                        My flagship project, <strong>PR-AI</strong>, was born from observing a Senior Supervisor
-                        struggle with the sheer volume of code audits. By engineering a single-agent system that
-                        analyzes Git diffs for <strong>Security, Scalability, and Reliability</strong>, I am reducing
-                        manual audit cycles by <strong>80%</strong>.
+                    <a href="mailto:nanboldassak2@gmail.com" class="disc-email-link">nanboldassak2@gmail.com <span class="arrow-icon">→</span></a>
+                </div>
+
+                <!-- Right: Philosophy & Stats -->
+                <div class="disc-right-col">
+                    <p class="disc-philosophy">
+                        "I don't just write code; I build decision-making engines. From my internships at NNPC Limited and PICTDA, to co-leading the dev team at GDG on Campus Babcock, I specialize in transforming 'manual bottlenecks' into high-velocity automated systems."
                     </p>
-                    <p>
-                        My engineering philosophy is rooted in practical utility: whether it's winning a Game Jam
-                        through immersive storytelling, building a custom CRUD ecosystem to scale the operations of the
-                        Tarok Nurses group, or developing a Personal Wardrobe AI to solve daily decision fatigue, I
-                        build tools that <strong>"actually matter."</strong>
-                    </p>
-                    <p class="about-focus">
-                        <span class="mono" style="color:var(--accent);">Current Focus:</span> Autonomous AI Agents, n8n
-                        Orchestration, and the intersection of LLMs with Enterprise Backend Architecture.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat-box glass">
-                            <span class="stat-num accent">10+</span>
-                            <span class="stat-lbl mono">Projects</span>
+                    <div class="disc-stats-row">
+                        <div class="disc-stat-box">
+                            <span class="disc-stat-num">10+</span>
+                            <span class="disc-stat-lbl">Projects Completed</span>
                         </div>
-                        <div class="stat-box glass">
-                            <span class="stat-num accent-2">2027</span>
-                            <span class="stat-lbl mono">Graduation</span>
-                        </div>
-                        <div class="stat-box glass">
-                            <span class="stat-num accent">Ubuntu</span>
-                            <span class="stat-lbl mono">Primary OS</span>
+                        <div class="disc-stat-box">
+                            <span class="disc-stat-num">2027</span>
+                            <span class="disc-stat-lbl">Expected Graduation</span>
                         </div>
                     </div>
                 </div>
-                <div class="about-cards">
-                    <div class="edu-card glass">
-                        <h3 class="card-mini-title">Education</h3>
-                        <h4 class="card-uni">Babcock University</h4>
-                        <p>Bachelor's Degree in Software Engineering</p>
-                        <p class="grad-year">Expected Graduation: 2027</p>
-                        <div class="subject-pills">
-                            <span class="pill">Software Architecture</span>
-                            <span class="pill">Backend Engineering</span>
-                            <span class="pill">Artificial Intelligence</span>
-                            <span class="pill">Database Design</span>
-                            <span class="pill">Software Security</span>
-                        </div>
+            </div>
+
+            <!-- Highlight Services Cards Grid -->
+            <div class="highlights-cards-grid">
+                <!-- Card 1: Solid Yellow -->
+                <div class="highlight-card highlight-card--solid">
+                    <div class="hl-card-icon">⚡</div>
+                    <h3 class="hl-card-title">AI Systems Architect.</h3>
+                    <p class="hl-card-desc">Building autonomous agents, n8n orchestrations, and prompt engineering frameworks.</p>
+                    <span class="hl-card-meta">8+ Projects</span>
+                </div>
+                <!-- Card 2: Dark Grey -->
+                <div class="highlight-card">
+                    <div class="hl-card-icon">⚙️</div>
+                    <h3 class="hl-card-title">Automation Engineer.</h3>
+                    <p class="hl-card-desc">Transforming manual overhead into automated workflows and secure internal web tools.</p>
+                    <span class="hl-card-meta">6+ Workflows</span>
+                </div>
+                <!-- Card 3: Dark Grey -->
+                <div class="highlight-card">
+                    <div class="hl-card-icon">💻</div>
+                    <h3 class="hl-card-title">Software Engineer.</h3>
+                    <p class="hl-card-desc">Designing robust backend servers, clean CRUD systems, and scalable DB architecture.</p>
+                    <span class="hl-card-meta">10+ Systems Built</span>
+                </div>
+            </div>
+
+            <!-- Secondary info: Education and Game Jam Milestone -->
+            <div class="about-secondary-row">
+                <div class="edu-card-new glass">
+                    <h3 class="card-mini-title">Education</h3>
+                    <h4 class="card-uni">Babcock University</h4>
+                    <p>Bachelor's Degree in Software Engineering</p>
+                    <p class="grad-year">Expected Graduation: 2027</p>
+                    <div class="subject-pills">
+                        <span class="pill">Software Architecture</span>
+                        <span class="pill">Backend Engineering</span>
+                        <span class="pill">Artificial Intelligence</span>
+                        <span class="pill">Database Design</span>
+                        <span class="pill">Software Security</span>
                     </div>
-                    <div class="award-card glass glow-award">
-                        <span>🏆</span>
-                        <div>
-                            <h3 class="card-mini-title">Achievement</h3>
-                            <p>Winner of Clash of Devs 2.0 Game Jam Nigeria</p>
-                        </div>
+                </div>
+                <div class="award-card-new glass glow-award">
+                    <span>🏆</span>
+                    <div>
+                        <h3 class="card-mini-title">Achievement</h3>
+                        <p>Winner of Clash of Devs 2.0 Game Jam Nigeria</p>
                     </div>
                 </div>
             </div>
@@ -467,28 +479,25 @@
         <div class="container">
             <div class="section-head">
                 <h2 class="section-title">Experience</h2>
-                <p class="section-sub">From PICTDA to NNPC — building the automation pipeline</p>
+                <p class="section-sub">From local developer communities to enterprise pipeline automation</p>
             </div>
             <div class="experience-timeline">
-                <!-- PICTDA -->
+                <!-- GDG on Campus Babcock -->
                 <div class="exp-card glass">
                     <div class="exp-orb">
-                        <img src="pictda-logo.png" alt="PICTDA" class="org-logo">
+                        <img src="assets/logos/google-icon-logo-svgrepo-com.svg" alt="GDG on Campus" class="org-logo">
                     </div>
                     <div class="exp-body">
-                        <span class="mono exp-date">Jan 2026 – Feb 2026</span>
-                        <h3 class="exp-title">Plateau State ICT Development Agency <span
-                                class="exp-short">(PICTDA)</span> <span class="exp-internship">(Internship)</span></h3>
+                        <span class="mono exp-date">July 2026 – Present</span>
+                        <h3 class="exp-title">GDG on Campus Babcock <span class="exp-internship">(Technical Co-Lead)</span></h3>
                         <p class="exp-desc">
-                            Focus on building robust backend systems and government-level web infrastructure.
-                            Sharpened production habits around Python frameworks, web delivery, and practical
-                            infrastructure thinking inside a public-sector environment.
+                            Co-leading the developer community and core engineering team. Coordinating sprints, managing project lifecycles, assigning features, and architecting web products to drive technical growth and ship products within the campus community.
                         </p>
                         <div class="exp-tags">
-                            <span class="tag">Django</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Web Development</span>
+                            <span class="tag accent-tag">Project Management</span>
+                            <span class="tag accent-tag">Technical Leadership</span>
+                            <span class="tag accent-tag">Git Collaboration</span>
+                            <span class="tag accent-tag">Product Engineering</span>
                         </div>
                     </div>
                 </div>
@@ -499,19 +508,41 @@
                         <img src="nnpclogo.png" alt="NNPC" class="org-logo">
                     </div>
                     <div class="exp-body">
-                        <span class="mono exp-date">Feb 2026 – Present</span>
-                        <h3 class="exp-title">NNPC Limited <span class="exp-short">(Nigerian National Petroleum
-                                Company)</span> <span class="exp-internship">(Internship)</span></h3>
+                        <span class="mono exp-date">Feb 2026 – June 2026</span>
+                        <h3 class="exp-title">NNPC Limited <span class="exp-short">(Nigerian National Petroleum Company)</span> <span class="exp-internship">(Internship)</span></h3>
                         <p class="exp-desc">
-                            Architecting internal AI agents and automated enterprise workflows to optimize operations.
+                            Architected internal AI agents and automated enterprise workflows to optimize operations.
                             Orchestrated automation, AI tooling, and operational systems designed for internal use at
                             enterprise scale.
                         </p>
                         <div class="exp-tags">
-                            <span class="tag accent-tag">n8n Workflows</span>
-                            <span class="tag accent-tag">AI Automation</span>
-                            <span class="tag accent-tag">OpenAI Integration</span>
-                            <span class="tag accent-tag">AI Tool Development</span>
+                            <span class="tag">n8n Workflows</span>
+                            <span class="tag">AI Automation</span>
+                            <span class="tag">OpenAI Integration</span>
+                            <span class="tag">AI Tool Development</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-connector"></div>
+                <!-- PICTDA -->
+                <div class="exp-card glass">
+                    <div class="exp-orb">
+                        <img src="pictda-logo.png" alt="PICTDA" class="org-logo">
+                    </div>
+                    <div class="exp-body">
+                        <span class="mono exp-date">Jan 2026 – Feb 2026</span>
+                        <h3 class="exp-title">Plateau State ICT Development Agency <span
+                                class="exp-short">(PICTDA)</span> <span class="exp-internship">(Internship)</span></h3>
+                        <p class="exp-desc">
+                            Focused on building robust backend systems and government-level web infrastructure.
+                            Sharpened production habits around Python frameworks, web delivery, and practical
+                            infrastructure thinking inside a public-sector environment.
+                        </p>
+                        <div class="exp-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Web Development</span>
                         </div>
                     </div>
                 </div>
@@ -674,8 +705,13 @@
                     <div class="card-tags">
                         <span class="tag">Native PHP</span>
                         <span class="tag">MySQL</span>
+                        <span class="tag">phpMyAdmin</span>
+                        <span class="tag">Brevo</span>
                         <span class="tag">CRUD Systems</span>
                         <span class="tag">Admin Workflows</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://bolitupac.infinityfree.io/TNF-website/" target="_blank" rel="noreferrer" class="project-link">Live Demo ↗</a>
                     </div>
                 </div>
                 <div class="project-card glass">
@@ -805,6 +841,8 @@
                     <h3 class="skill-cat accent-2">Data &amp; Tools</h3>
                     <div class="skill-list">
                         <div class="skill-item">MySQL</div>
+                        <div class="skill-item">phpMyAdmin</div>
+                        <div class="skill-item">Brevo</div>
                         <div class="skill-item">Database Design</div>
                         <div class="skill-item">Git &amp; GitHub</div>
                         <div class="skill-item">Godot Engine</div>
@@ -1096,10 +1134,38 @@
         </div>
     </div>
 
+    <!-- ── CHATBOT UI ──────────────────────────────────── -->
+    <div id="chat-window" class="chat-window glass" aria-hidden="true">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <span class="chat-status-dot"></span>
+                <span class="chat-header-title">NFD AI Assistant</span>
+            </div>
+            <button type="button" class="chat-close" id="chat-close" aria-label="Close Chat">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-msg system">
+                Hi! I'm Nanbol's AI Assistant. Ask me anything about his projects, experience, or skills!
+            </div>
+        </div>
+        <div class="chat-quick-replies">
+            <button type="button" class="quick-reply-btn" data-query="Tell me about PR-AI Auditor">PR-AI Auditor</button>
+            <button type="button" class="quick-reply-btn" data-query="What is his GDG on Campus role?">GDG Co-lead</button>
+            <button type="button" class="quick-reply-btn" data-query="Show contact links">Contact Info</button>
+            <button type="button" class="quick-reply-btn" data-query="What are his core skills?">Skills Stack</button>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type a message..." aria-label="Chat Message">
+            <button type="button" id="chat-send" aria-label="Send">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+        </div>
+    </div>
+
     <!-- ── FAB ─────────────────────────────────────────── -->
     <div class="fab-wrap" id="fab-wrap">
-        <div class="fab-label">AI Assistant coming soon…</div>
-        <button type="button" class="fab-btn" aria-label="AI Bot placeholder">
+        <div class="fab-label">Chat with NFD AI</div>
+        <button type="button" class="fab-btn" id="fab-btn" aria-label="Open AI Assistant">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="11" width="18" height="11" rx="2" />

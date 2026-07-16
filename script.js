@@ -137,12 +137,25 @@ const nodeBlueprints = [
         label: "NNPC Internship",
         title: "NNPC Limited",
         type: "experience",
-        meta: "Feb 2026 – Present",
+        meta: "Feb 2026 – June 2026",
         description: "Architecting internal AI agents and automated enterprise workflows to optimize operations.",
         tags: ["Enterprise AI", "Internal Agents", "Workflow Automation"],
         panel: {
             heading: "Enterprise Focus",
-            body: "The current work shifts into orchestrated automation, AI tooling, and operational systems designed for internal use at enterprise scale.",
+            body: "The internship focused on orchestrated automation, AI tooling, and operational systems designed for internal use at enterprise scale.",
+        },
+    },
+    {
+        id: "gdg",
+        label: "GDG Co-Lead",
+        title: "GDG on Campus Babcock",
+        type: "experience",
+        meta: "July 2026 – Present",
+        description: "Co-leading the developer community and core dev team, coordinating sprints, and shipping web products.",
+        tags: ["Project Management", "Technical Leadership", "Git Collaboration", "Community"],
+        panel: {
+            heading: "Technical Leadership",
+            body: "Co-leading the developer community and core engineering team. Coordinating sprints, managing project lifecycles, assigning features, and architecting web products to drive technical growth and ship products within the campus community.",
         },
     },
     {
@@ -294,6 +307,7 @@ const nodePositionsDesktop = {
     python:         { x: 760,  y: 390,  w: 190, h: 122 },
     webdev:         { x: 760,  y: 530,  w: 190, h: 122 },
     nnpc:           { x: 1030, y: 260,  w: 330, h: 180 },
+    gdg:            { x: 1030, y: 500,  w: 330, h: 180 },
     n8n:            { x: 1450, y: 90,   w: 210, h: 122 },
     "ai-automation":{ x: 1450, y: 240,  w: 210, h: 122 },
     openai:         { x: 1450, y: 390,  w: 210, h: 122 },
@@ -315,17 +329,18 @@ const nodePositionsMobile = {
     python:         { x: 20, y: 708,  w: 320, h: 108 },
     webdev:         { x: 20, y: 842,  w: 320, h: 108 },
     nnpc:           { x: 20, y: 986,  w: 320, h: 174 },
-    n8n:            { x: 20, y: 1190, w: 320, h: 108 },
-    "ai-automation":{ x: 20, y: 1324, w: 320, h: 108 },
-    openai:         { x: 20, y: 1458, w: 320, h: 108 },
-    tooldev:        { x: 20, y: 1592, w: 320, h: 108 },
-    focus:          { x: 20, y: 1736, w: 320, h: 182 },
-    award:          { x: 20, y: 1952, w: 320, h: 132 },
-    prai:           { x: 20, y: 2118, w: 320, h: 258 },
-    tarok:          { x: 20, y: 2408, w: 320, h: 190 },
-    wardrobe:       { x: 20, y: 2634, w: 320, h: 190 },
-    archive:        { x: 20, y: 2860, w: 320, h: 150 },
-    contact:        { x: 20, y: 3044, w: 320, h: 156 },
+    gdg:            { x: 20, y: 1180, w: 320, h: 174 },
+    n8n:            { x: 20, y: 1388, w: 320, h: 108 },
+    "ai-automation":{ x: 20, y: 1522, w: 320, h: 108 },
+    openai:         { x: 20, y: 1656, w: 320, h: 108 },
+    tooldev:        { x: 20, y: 1790, w: 320, h: 108 },
+    focus:          { x: 20, y: 1934, w: 320, h: 182 },
+    award:          { x: 20, y: 2150, w: 320, h: 132 },
+    prai:           { x: 20, y: 2316, w: 320, h: 258 },
+    tarok:          { x: 20, y: 2606, w: 320, h: 190 },
+    wardrobe:       { x: 20, y: 2832, w: 320, h: 190 },
+    archive:        { x: 20, y: 3058, w: 320, h: 150 },
+    contact:        { x: 20, y: 3242, w: 320, h: 156 },
 };
 
 const connections = [
@@ -336,10 +351,11 @@ const connections = [
     ["pictda",  "webdev",        "accent"],
     ["python",  "nnpc",          "accent2"],
     ["webdev",  "nnpc",          "accent2"],
-    ["nnpc",    "n8n",           "accent"],
-    ["nnpc",    "ai-automation", "accent"],
-    ["nnpc",    "openai",        "accent"],
-    ["nnpc",    "tooldev",       "accent"],
+    ["nnpc",    "gdg",           "accent"],
+    ["gdg",     "n8n",           "accent2"],
+    ["gdg",     "ai-automation", "accent2"],
+    ["gdg",     "openai",        "accent2"],
+    ["gdg",     "tooldev",       "accent2"],
     ["focus",   "prai",          "accent2"],
     ["focus",   "tarok",         "accent"],
     ["focus",   "wardrobe",      "accent2"],
@@ -374,7 +390,7 @@ function colorFor(tone) {
 // ── CANVAS BOARD SIZE ─────────────────────────────
 
 function boardSize() {
-    return isMobile ? { w: 360, h: 3260 } : { w: 1750, h: 1300 };
+    return isMobile ? { w: 360, h: 3460 } : { w: 1750, h: 1300 };
 }
 
 // ── RENDER NODES ─────────────────────────────────
@@ -857,4 +873,104 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", e => {
         if (e.key === "Escape" && archiveOpen) closeArchive();
     });
+
+    // ── CHATBOT ENGINE ────────────────────────────────
+    const chatWindow = document.getElementById('chat-window');
+    const fabBtn = document.getElementById('fab-btn');
+    const chatClose = document.getElementById('chat-close');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+    const chatMessages = document.getElementById('chat-messages');
+
+    if (chatWindow && fabBtn) {
+        // Toggle chat window
+        fabBtn.addEventListener('click', () => {
+            const isHidden = chatWindow.getAttribute('aria-hidden') === 'true';
+            chatWindow.setAttribute('aria-hidden', isHidden ? 'false' : 'true');
+            chatWindow.classList.toggle('active', isHidden);
+            if (isHidden && chatInput) {
+                chatInput.focus();
+            }
+        });
+
+        if (chatClose) {
+            chatClose.addEventListener('click', () => {
+                chatWindow.setAttribute('aria-hidden', 'true');
+                chatWindow.classList.remove('active');
+            });
+        }
+
+        const assistantAnswers = {
+            "default": "I'm Nanbol's AI Assistant. You can ask me about his projects (PR-AI Auditor, Tarok Nurses System, Mossy Escape), experience (GDG Babcock, NNPC, PICTDA), or skills!",
+            "pr-ai": "PR-AI Auditor is Nanbol's flagship project. It's an AI-powered code review platform built using Laravel, OpenAI API, Monaco Editor, and Diff2HTML. It reduces manual code review time by up to 80% with precise line-level feedback.",
+            "gdg": "Nanbol is the Technical Co-lead at GDG on Campus Babcock (July 2026 – Present). He co-leads the dev team to build and ship campus projects, using project management, technical leadership, and Git collaboration skills.",
+            "nnpc": "Nanbol was an AI & Automation intern at NNPC Limited (Feb 2026 – June 2026), where he built internal AI agents and automated workflows with n8n and OpenAI integrations.",
+            "pictda": "Nanbol interned at Plateau State ICT Development Agency (PICTDA) from Jan 2026 to Feb 2026, focusing on Django, Flask, and robust government-level backend systems.",
+            "skills": "Nanbol's core skills include:\n- Backend: Python, Django, Flask, PHP, Laravel, REST APIs\n- AI & Automation: n8n workflows, OpenAI Integration, LLM Tooling\n- Data & Tools: MySQL, phpMyAdmin, Brevo, Git, Linux (Ubuntu)",
+            "contact": "You can connect with Nanbol via:\n- Email: nanboldassak2@gmail.com\n- GitHub: github.com/Bolitupac\n- LinkedIn: linkedin.com/in/nanbol-dassak-444090292\n- X: x.com/bolitupac"
+        };
+
+        function getAIResponse(query) {
+            const q = query.toLowerCase();
+            if (q.includes("pr-ai") || q.includes("auditor")) return assistantAnswers["pr-ai"];
+            if (q.includes("gdg") || q.includes("campus") || q.includes("co-lead") || q.includes("colead")) return assistantAnswers["gdg"];
+            if (q.includes("nnpc") || q.includes("petroleum")) return assistantAnswers["nnpc"];
+            if (q.includes("pictda") || q.includes("plateau")) return assistantAnswers["pictda"];
+            if (q.includes("skills") || q.includes("languages") || q.includes("tech") || q.includes("stack") || q.includes("framework")) return assistantAnswers["skills"];
+            if (q.includes("contact") || q.includes("email") || q.includes("social") || q.includes("hire") || q.includes("reach")) return assistantAnswers["contact"];
+            return assistantAnswers["default"];
+        }
+
+        function appendMessage(text, sender) {
+            if (!chatMessages) return;
+            const msg = document.createElement('div');
+            msg.className = `chat-msg ${sender}`;
+            msg.textContent = text;
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function handleSend() {
+            if (!chatInput) return;
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            appendMessage(text, 'user');
+            chatInput.value = '';
+
+            // Typing indicator
+            const typing = document.createElement('div');
+            typing.className = 'chat-msg system typing';
+            typing.textContent = 'Typing...';
+            chatMessages.appendChild(typing);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            setTimeout(() => {
+                typing.remove();
+                const reply = getAIResponse(text);
+                appendMessage(reply, 'system');
+            }, 600);
+        }
+
+        if (chatSend) {
+            chatSend.addEventListener('click', handleSend);
+        }
+        if (chatInput) {
+            chatInput.addEventListener('keydown', e => {
+                if (e.key === 'Enter') handleSend();
+            });
+        }
+
+        // Quick replies
+        document.querySelectorAll('.quick-reply-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const query = this.getAttribute('data-query');
+                if (query) {
+                    appendMessage(query, 'user');
+                    const reply = getAIResponse(query);
+                    setTimeout(() => appendMessage(reply, 'system'), 300);
+                }
+            });
+        });
+    }
 });

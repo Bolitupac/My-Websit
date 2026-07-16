@@ -17,8 +17,11 @@
     <meta name="twitter:title" content="Nanbol Felix Dassak | AI Engineer &amp; Automation Architect">
     <meta name="twitter:description" content="Explore the workflow graph behind Nanbol Dassak's AI automation and backend engineering journey.">
     <meta name="twitter:image" content="https://bolitupac.github.io/My-Websit/profilepic.jpg">
-    <link rel="icon" type="image/png" href="icons8-greek-helmet-96.png">
-    <link rel="apple-touch-icon" href="icons8-greek-helmet-96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -147,10 +150,38 @@
         </div>
     </div>
 
+    <!-- ── CHATBOT UI ──────────────────────────────────── -->
+    <div id="chat-window" class="chat-window glass" aria-hidden="true">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <span class="chat-status-dot"></span>
+                <span class="chat-header-title">NFD AI Assistant</span>
+            </div>
+            <button type="button" class="chat-close" id="chat-close" aria-label="Close Chat">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-msg system">
+                Hi! I'm Nanbol's AI Assistant. Ask me anything about his projects, experience, or skills!
+            </div>
+        </div>
+        <div class="chat-quick-replies">
+            <button type="button" class="quick-reply-btn" data-query="Tell me about PR-AI Auditor">PR-AI Auditor</button>
+            <button type="button" class="quick-reply-btn" data-query="What is his GDG on Campus role?">GDG Co-lead</button>
+            <button type="button" class="quick-reply-btn" data-query="Show contact links">Contact Info</button>
+            <button type="button" class="quick-reply-btn" data-query="What are his core skills?">Skills Stack</button>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type a message..." aria-label="Chat Message">
+            <button type="button" id="chat-send" aria-label="Send">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+        </div>
+    </div>
+
     <!-- FAB -->
     <div class="fab-wrap" id="fab-wrap">
-        <div class="fab-label">AI Assistant coming soon...</div>
-        <button type="button" class="fab-btn" aria-label="AI Bot placeholder">
+        <div class="fab-label">Chat with NFD AI</div>
+        <button type="button" class="fab-btn" id="fab-btn" aria-label="Open AI Assistant">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="11" width="18" height="11" rx="2"/>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
