@@ -33,290 +33,8 @@
 
 <body>
 
-    <!-- ── MAINTENANCE OVERLAY ───────────────────────────── -->
-    <div id="maintenance-overlay">
-        <div class="maint-bg-grid"></div>
-        <div class="maint-orb maint-orb--1"></div>
-        <div class="maint-orb maint-orb--2"></div>
-        <div class="maint-orb maint-orb--3"></div>
-        <div class="maint-content">
-            <div class="maint-icon-wrap">
-                <div class="maint-icon-ring"></div>
-                <span class="maint-icon">⚙</span>
-            </div>
-            <div class="maint-tag mono">SYSTEM STATUS · OFFLINE</div>
-            <h1 class="maint-title">Under Maintenance</h1>
-            <p class="maint-desc">
-                I'm currently upgrading this site with new features and improvements.<br>
-                <strong>It'll be back up shortly.</strong> Thanks for your patience.
-            </p>
-            <div class="maint-progress-wrap">
-                <div class="maint-progress-bar">
-                    <div class="maint-progress-fill"></div>
-                </div>
-                <span class="maint-progress-label mono">Loading updates...</span>
-            </div>
-            <div class="maint-socials">
-                <span class="maint-socials-label mono">Find me in the meantime →</span>
-                <div class="maint-social-links">
-                    <a href="https://x.com/bolitupac" target="_blank" rel="noreferrer" class="maint-social-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        X / Twitter
-                    </a>
-                    <a href="mailto:nanboldassak2@gmail.com" class="maint-social-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        Email Me
-                    </a>
-                    <a href="https://github.com/Bolitupac" target="_blank" rel="noreferrer" class="maint-social-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                        GitHub
-                    </a>
-                </div>
-            </div>
-            <div class="maint-footer-note mono">NFD · nanboldassak2@gmail.com</div>
-        </div>
-    </div>
 
-    <style>
-        /* ── MAINTENANCE OVERLAY STYLES ── */
-        #maintenance-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            background: #080b12;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            font-family: 'Inter', system-ui, sans-serif;
-        }
 
-        /* Dot grid background */
-        .maint-bg-grid {
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle, rgba(99,102,241,0.12) 1px, transparent 1px);
-            background-size: 32px 32px;
-            animation: maint-grid-pulse 8s ease-in-out infinite;
-        }
-        @keyframes maint-grid-pulse {
-            0%,100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-
-        /* Ambient glow orbs */
-        .maint-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            pointer-events: none;
-            animation: maint-float 12s ease-in-out infinite;
-        }
-        .maint-orb--1 {
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 70%);
-            top: -150px; left: -100px;
-            animation-delay: 0s;
-        }
-        .maint-orb--2 {
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%);
-            bottom: -100px; right: -80px;
-            animation-delay: -4s;
-        }
-        .maint-orb--3 {
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
-            top: 50%; left: 50%;
-            transform: translate(-50%,-50%);
-            animation-delay: -8s;
-        }
-        @keyframes maint-float {
-            0%,100% { transform: translate(0,0) scale(1); }
-            33% { transform: translate(30px,-20px) scale(1.05); }
-            66% { transform: translate(-20px,30px) scale(0.95); }
-        }
-
-        /* Main content card */
-        .maint-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 560px;
-            width: 90%;
-            padding: 3rem 2.5rem;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(99,102,241,0.2);
-            border-radius: 24px;
-            backdrop-filter: blur(24px);
-            box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 32px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
-            animation: maint-card-in 0.9s cubic-bezier(0.16,1,0.3,1) both;
-        }
-        @keyframes maint-card-in {
-            from { opacity: 0; transform: translateY(40px) scale(0.96); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        /* Spinning gear icon */
-        .maint-icon-wrap {
-            position: relative;
-            width: 80px; height: 80px;
-            margin: 0 auto 1.5rem;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .maint-icon-ring {
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            border-top-color: #6366f1;
-            border-right-color: rgba(99,102,241,0.4);
-            animation: maint-spin 2s linear infinite;
-        }
-        .maint-icon-ring::before {
-            content: '';
-            position: absolute;
-            inset: 6px;
-            border-radius: 50%;
-            border: 1px solid rgba(139,92,246,0.3);
-        }
-        @keyframes maint-spin {
-            to { transform: rotate(360deg); }
-        }
-        .maint-icon {
-            font-size: 2rem;
-            animation: maint-gear-spin 4s linear infinite;
-            display: block;
-            color: #a5b4fc;
-        }
-        @keyframes maint-gear-spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Status tag */
-        .maint-tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-family: 'JetBrains Mono', 'Courier New', monospace;
-            letter-spacing: 0.15em;
-            color: #6366f1;
-            background: rgba(99,102,241,0.12);
-            border: 1px solid rgba(99,102,241,0.3);
-            border-radius: 6px;
-            padding: 4px 12px;
-            margin-bottom: 1rem;
-        }
-
-        /* Title */
-        .maint-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            color: #fff;
-            margin: 0 0 1rem;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #818cf8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Description */
-        .maint-desc {
-            color: rgba(255,255,255,0.6);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-        .maint-desc strong { color: rgba(255,255,255,0.85); font-weight: 600; }
-
-        /* Progress bar */
-        .maint-progress-wrap {
-            margin-bottom: 2rem;
-        }
-        .maint-progress-bar {
-            height: 4px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 100px;
-            overflow: hidden;
-            margin-bottom: 0.5rem;
-        }
-        .maint-progress-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
-            border-radius: 100px;
-            animation: maint-progress 6s ease-in-out infinite;
-            box-shadow: 0 0 12px rgba(99,102,241,0.6);
-        }
-        @keyframes maint-progress {
-            0% { width: 0%; }
-            50% { width: 75%; }
-            70% { width: 85%; }
-            90% { width: 60%; }
-            100% { width: 80%; }
-        }
-        .maint-progress-label {
-            font-size: 0.72rem;
-            font-family: 'JetBrains Mono', 'Courier New', monospace;
-            color: rgba(255,255,255,0.35);
-            letter-spacing: 0.05em;
-        }
-
-        /* Social links */
-        .maint-socials {
-            margin-bottom: 2rem;
-        }
-        .maint-socials-label {
-            display: block;
-            font-size: 0.75rem;
-            font-family: 'JetBrains Mono', 'Courier New', monospace;
-            color: rgba(255,255,255,0.35);
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.05em;
-        }
-        .maint-social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            justify-content: center;
-        }
-        .maint-social-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px;
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-        .maint-social-btn:hover {
-            background: rgba(99,102,241,0.15);
-            border-color: rgba(99,102,241,0.4);
-            color: #a5b4fc;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(99,102,241,0.2);
-        }
-
-        /* Footer note */
-        .maint-footer-note {
-            font-size: 0.7rem;
-            font-family: 'JetBrains Mono', 'Courier New', monospace;
-            color: rgba(255,255,255,0.2);
-            letter-spacing: 0.05em;
-        }
-
-        /* Responsive */
-        @media (max-width: 480px) {
-            .maint-content { padding: 2rem 1.5rem; }
-            .maint-social-links { flex-direction: column; align-items: center; }
-            .maint-social-btn { width: 100%; justify-content: center; }
-        }
-    </style>
 
     <!-- ── NAV ─────────────────────────────────────────── -->
     <nav id="site-nav">
@@ -337,12 +55,6 @@
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li>
-                    <a href="portfolio.html" class="nav-link nav-canvas-glow" id="canvas-nav-link"
-                        title="Interactive n8n-style workflow canvas — pan through my career journey as connected nodes">
-                        <span class="canvas-glow-dot"></span> Canvas View
-                    </a>
-                </li>
             </ul>
             <div class="nav-right">
                 <button id="theme-toggle" class="btn-ghost btn-ghost--sm" type="button">☀ Light</button>
@@ -355,39 +67,43 @@
 
     <!-- ── HERO ────────────────────────────────────────── -->
     <section id="home" class="hero-section">
-        <div class="dot-grid"></div>
-        <div class="container hero-grid-new">
-            <!-- Left Column: Name & Socials -->
-            <div class="hero-name-col">
-                <h1 class="hero-title-new">Nanbol<br>Dassak.</h1>
-                <div class="hero-divider"></div>
-                <div class="hero-socials">
-                    <a href="https://x.com/bolitupac" target="_blank" rel="noreferrer" class="social-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    </a>
-                    <a href="https://github.com/Bolitupac" target="_blank" rel="noreferrer" class="social-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                    </a>
-                    <a href="https://linkedin.com/in/nanbol-dassak-444090292" target="_blank" rel="noreferrer" class="social-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
+        <div class="container">
+
+            <!-- Layered Name + Image Block -->
+            <div class="hero-overlap-block">
+                <h1 class="hero-name-nanbol">Nanbol</h1>
+                <img src="assets/images/nanbolbgremoved.png" alt="Nanbol Felix Dassak" class="hero-overlap-img">
+                <h1 class="hero-name-dassak">Dassak.</h1>
+            </div>
+
+            <!-- Socials -->
+            <div class="hero-socials-row">
+                <a href="https://x.com/bolitupac" target="_blank" rel="noreferrer" class="social-icon" aria-label="X / Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://github.com/Bolitupac" target="_blank" rel="noreferrer" class="social-icon" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/nanbol-dassak-444090292" target="_blank" rel="noreferrer" class="social-icon" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://www.upwork.com/freelancers/~01fee90c3712a0d94f" target="_blank" rel="noreferrer" class="social-icon" aria-label="Upwork">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+                </a>
+            </div>
+
+            <!-- Introduction below the name block -->
+            <div class="hero-intro-below">
+                <div class="intro-left">
+                    <span class="intro-tag">— Introduction</span>
+                    <h2 class="intro-headline">AI Systems Architect &amp; Software Engineer, based in Nigeria.</h2>
+                </div>
+                <div class="intro-right">
+                    <p class="intro-text">I build decision-making engines — autonomous agents, enterprise automation, and AI-first backend systems that replace manual overhead with velocity.</p>
+                    <a href="#about" class="intro-story-link">My story <span class="arrow-icon">→</span></a>
                 </div>
             </div>
 
-            <!-- Center Column: Profile Image Cutout -->
-            <div class="hero-image-col">
-                <img src="assets/images/nanbol_standing.png" alt="Nanbol Felix Dassak" class="hero-new-img">
-            </div>
-
-            <!-- Right Column: Intro Info -->
-            <div class="hero-intro-col">
-                <span class="intro-tag">— Introduction</span>
-                <h2 class="intro-headline">AI Systems Architect &amp; Software Engineer, based in Nigeria.</h2>
-                <p class="intro-text">
-                    I build decision-making engines — autonomous agents, enterprise automation, and AI-first backend systems.
-                </p>
-                <a href="#about" class="intro-story-link">My story <span class="arrow-icon">→</span></a>
-            </div>
         </div>
     </section>
 
@@ -1166,14 +882,7 @@
     <div class="fab-wrap" id="fab-wrap">
         <div class="fab-label">Chat with NFD AI</div>
         <button type="button" class="fab-btn" id="fab-btn" aria-label="Open AI Assistant">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                <circle cx="12" cy="5" r="1" fill="currentColor" />
-                <circle cx="9" cy="16" r="1" fill="currentColor" />
-                <circle cx="15" cy="16" r="1" fill="currentColor" />
-            </svg>
+            <img src="assets/favicon_io/apple-touch-icon.png" alt="NFD AI" class="fab-favicon-icon">
         </button>
     </div>
 
