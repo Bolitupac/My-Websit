@@ -49,6 +49,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     transition: background-color 0.32s ease, color 0.32s ease;
+    cursor: url('assets/favicon_io/favicon-32x32.png') 16 16, auto;
 }
 
 .mono { font-family: var(--font-mono); }
@@ -85,6 +86,13 @@ body {
     gap: 12px;
 }
 .nav-brand { display: flex; align-items: center; gap: 10px; }
+.nav-favicon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
 .brand-tag {
     font-size: 10px; letter-spacing: 0.25em; color: var(--accent);
     background: rgba(234,75,113,0.1); border: 1px solid rgba(234,75,113,0.22);
@@ -365,6 +373,18 @@ body {
     letter-spacing: -0.01em;
 }
 
+/* ── NIGERIA FLAG TEXT ─────────────────────────── */
+.flag-ni, .flag-ia {
+    color: #008751;
+    font-weight: 800;
+}
+.flag-ger {
+    color: #ffffff;
+}
+[data-theme="light"] .flag-ger {
+    color: #1a1a1a;
+}
+
 .intro-text {
     font-size: 15px;
     line-height: 1.8;
@@ -411,6 +431,41 @@ body {
 .stat-lbl { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
 .about-cards { display: flex; flex-direction: column; gap: 20px; }
 .edu-card { padding: 26px; }
+.edu-card-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    justify-content: space-between;
+}
+.edu-card-content {
+    flex: 1;
+}
+.edu-card-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 4px;
+}
+.babcock-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+@media (max-width: 480px) {
+    .edu-card-inner {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .edu-card-logo {
+        padding-top: 0;
+    }
+    .babcock-logo {
+        width: 56px;
+        height: 56px;
+    }
+}
 .card-mini-title { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono); color: var(--muted); margin-bottom: 10px; }
 .card-uni { color: var(--accent-2); font-size: 18px; font-weight: 700; margin-bottom: 6px; }
 .grad-year { color: var(--warning); font-weight: 600; margin: 10px 0; font-size: 13px; }
@@ -920,6 +975,96 @@ body {
     display: flex;
     flex-direction: column;
     gap: 32px;
+}
+
+.disc-philosophy {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--muted);
+    font-style: italic;
+    padding: 24px 28px;
+    border-left: 3px solid var(--accent);
+    background: rgba(234, 75, 113, 0.04);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    position: relative;
+    quotes: "\\201C" "\\201D";
+}
+.disc-philosophy::before {
+    content: open-quote;
+    font-size: 64px;
+    line-height: 0;
+    color: var(--accent);
+    font-family: Georgia, serif;
+    position: absolute;
+    top: 32px;
+    left: 12px;
+    opacity: 0.35;
+    pointer-events: none;
+}
+[data-theme="light"] .disc-philosophy {
+    background: rgba(234, 75, 113, 0.03);
+}
+
+/* ── STATS BANNER ──────────────────────────────── */
+.stats-banner-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 40px;
+    margin-bottom: 0;
+    width: 100%;
+    background: var(--bg-elevated);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.stat-banner-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 24px;
+    text-align: center;
+    gap: 6px;
+    min-width: 0;
+}
+.stat-banner-num {
+    font-size: clamp(40px, 5vw, 56px);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+    line-height: 1;
+}
+.stat-banner-lbl {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.stat-banner-sub {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 2px;
+}
+.stat-banner-divider {
+    width: 1px;
+    align-self: stretch;
+    background: var(--line-soft);
+    flex-shrink: 0;
+}
+@media (max-width: 480px) {
+    .stat-banner-card {
+        padding: 24px 12px;
+    }
+    .stat-banner-lbl {
+        font-size: 11px;
+    }
+    .stat-banner-sub {
+        font-size: 10px;
+    }
 }
 
 /* ── HIGHLIGHT CARDS ───────────────────────────── */

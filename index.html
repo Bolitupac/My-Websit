@@ -40,12 +40,7 @@
     <nav id="site-nav">
         <div class="nav-inner">
             <div class="nav-brand">
-                <div class="logo-mark">
-                    <svg viewBox="0 0 100 100" class="logo-svg">
-                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="12"></circle>
-                        <path d="M 50 10 A 40 40 0 0 1 90 50 L 50 50 Z" fill="currentColor"></path>
-                    </svg>
-                </div>
+                <img src="assets/favicon_io/favicon-32x32.png" alt="NFD" class="nav-favicon">
                 <span class="brand-name">Nanbol Dassak.</span>
             </div>
             <ul class="nav-links" id="nav-links">
@@ -106,13 +101,19 @@
                             d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" />
                     </svg>
                 </a>
+                <a href="mailto:nanboldassak2@gmail.com" class="social-icon" aria-label="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M22 4L12 13 2 4"/>
+                    </svg>
+                </a>
             </div>
 
             <!-- Introduction below the name block -->
             <div class="hero-intro-below">
                 <div class="intro-left">
                     <span class="intro-tag">— Introduction</span>
-                    <h2 class="intro-headline">AI Systems Architect &amp; Software Engineer, based in Nigeria.</h2>
+                    <h2 class="intro-headline">Software Engineer,<br>based in <span class="flag-ni">Ni</span><span class="flag-ger">ger</span><span class="flag-ia">ia</span>.</h2>
                 </div>
                 <div class="intro-right">
                     <p class="intro-text">I build decision-making engines — autonomous agents, enterprise automation,
@@ -140,23 +141,13 @@
                             class="arrow-icon">→</span></a>
                 </div>
 
-                <!-- Right: Philosophy & Stats -->
+                <!-- Right: Philosophy -->
                 <div class="disc-right-col">
                     <p class="disc-philosophy">
                         "I don't just write code; I build decision-making engines. From my internships at NNPC Limited
                         and PICTDA, to co-leading the dev team at GDG on Campus Babcock, I specialize in transforming
                         'manual bottlenecks' into high-velocity automated systems."
                     </p>
-                    <div class="disc-stats-row">
-                        <div class="disc-stat-box">
-                            <span class="disc-stat-num">10+</span>
-                            <span class="disc-stat-lbl">Projects Completed</span>
-                        </div>
-                        <div class="disc-stat-box">
-                            <span class="disc-stat-num">2027</span>
-                            <span class="disc-stat-lbl">Expected Graduation</span>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -191,16 +182,23 @@
             <!-- Secondary info: Education and Game Jam Milestone -->
             <div class="about-secondary-row">
                 <div class="edu-card glass">
-                    <h3 class="card-mini-title">Education</h3>
-                    <h4 class="card-uni">Babcock University</h4>
-                    <p>Bachelor's Degree in Software Engineering</p>
-                    <p class="grad-year">Expected Graduation: 2027</p>
-                    <div class="subject-pills">
-                        <span class="pill">Software Architecture</span>
-                        <span class="pill">Backend Engineering</span>
-                        <span class="pill">Artificial Intelligence</span>
-                        <span class="pill">Database Design</span>
-                        <span class="pill">Software Security</span>
+                    <div class="edu-card-inner">
+                        <div class="edu-card-content">
+                            <h3 class="card-mini-title">Education</h3>
+                            <h4 class="card-uni">Babcock University</h4>
+                            <p>Bachelor's Degree in Software Engineering</p>
+                            <p class="grad-year">Expected Graduation: 2027</p>
+                            <div class="subject-pills">
+                                <span class="pill">Software Architecture</span>
+                                <span class="pill">Backend Engineering</span>
+                                <span class="pill">Artificial Intelligence</span>
+                                <span class="pill">Database Design</span>
+                                <span class="pill">Software Security</span>
+                            </div>
+                        </div>
+                        <div class="edu-card-logo">
+                            <img src="assets/images/babcocklogo.webp" alt="Babcock University" class="babcock-logo">
+                        </div>
                     </div>
                 </div>
                 <div class="award-card glass glow-award">
@@ -209,6 +207,20 @@
                         <h3 class="card-mini-title">Achievement</h3>
                         <p>Winner of Clash of Devs 2.0 Game Jam Nigeria</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="stats-banner-row">
+                <div class="stat-banner-card">
+                    <span class="stat-banner-num">10+</span>
+                    <span class="stat-banner-lbl">Projects Completed</span>
+                </div>
+                <div class="stat-banner-divider"></div>
+                <div class="stat-banner-card">
+                    <span class="stat-banner-num">2027</span>
+                    <span class="stat-banner-lbl">Expected Graduation</span>
+                    <span class="stat-banner-sub">from Babcock University</span>
                 </div>
             </div>
         </div>
