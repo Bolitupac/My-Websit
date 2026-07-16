@@ -531,7 +531,8 @@ body {
 .skill-card { padding: 24px; }
 .skill-cat { font-size: 14px; font-weight: 700; margin-bottom: 16px; }
 .skill-list { display: flex; flex-direction: column; gap: 10px; }
-.skill-item { padding: 9px 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); font-size: 13px; }
+.skill-item { padding: 9px 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 10px; }
+.skill-logo { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 [data-theme="light"] .skill-item { background: rgba(21,24,33,0.03); }
 .current-focus { padding: 28px; text-align: center; }
 .focus-title { font-size: 16px; font-weight: 700; color: var(--warning); margin-bottom: 18px; }
@@ -1049,6 +1050,33 @@ body {
     font-weight: 400;
     margin-top: 2px;
 }
+.grad-seven {
+    position: relative;
+    display: inline-block;
+}
+.grad-seven::after {
+    content: '🎓';
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    pointer-events: none;
+    animation: capBounce 2s ease-in-out infinite;
+}
+@keyframes capBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(-4px); }
+}
+
+/* ── BABCOCK LINK ──────────────────────────────── */
+.card-uni a {
+    color: inherit;
+    transition: color 0.2s;
+}
+.card-uni a:hover {
+    color: var(--accent);
+}
 .stat-banner-divider {
     width: 1px;
     align-self: stretch;
@@ -1077,19 +1105,38 @@ body {
     width: 100%;
 }
 .highlight-card {
-    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.02);
+    background-size: cover;
+    background-position: center;
     border: 1px solid var(--line-strong);
-    border-radius: var(--radius);
+    border-radius: 10px;
     padding: 32px;
     color: var(--text);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     min-height: 280px;
+    overflow: hidden;
     transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(0.35);
+    z-index: 0;
+    border-radius: inherit;
+}
+.highlight-card > * {
+    position: relative;
+    z-index: 1;
+}
 [data-theme="light"] .highlight-card {
-    background: rgba(21, 24, 33, 0.02);
+    background-color: rgba(21, 24, 33, 0.02);
 }
 .highlight-card:hover {
     transform: translateY(-6px);
@@ -1097,10 +1144,14 @@ body {
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 .highlight-card--solid {
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    background-image: linear-gradient(135deg, var(--accent), var(--accent-2));
+    background-color: transparent;
     border: none;
     color: #ffffff;
     box-shadow: 0 16px 40px rgba(234, 75, 113, 0.15);
+}
+.highlight-card--solid::before {
+    filter: blur(5px) brightness(0.3);
 }
 .highlight-card--solid:hover {
     box-shadow: 0 20px 48px rgba(234, 75, 113, 0.28);
