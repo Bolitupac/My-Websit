@@ -883,21 +883,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatMessages = document.getElementById('chat-messages');
 
     if (chatWindow && fabBtn) {
-        // Toggle chat window
-        fabBtn.addEventListener('click', () => {
-            const isHidden = chatWindow.getAttribute('aria-hidden') === 'true';
-            chatWindow.setAttribute('aria-hidden', isHidden ? 'false' : 'true');
-            chatWindow.classList.toggle('active', isHidden);
-            if (isHidden && chatInput) {
-                chatInput.focus();
-            }
-        });
+        function openChat() {
+            chatWindow.setAttribute('aria-hidden', 'false');
+            chatWindow.classList.add('active');
+            if (chatInput) chatInput.focus();
+        }
+        function closeChat() {
+            chatWindow.setAttribute('aria-hidden', 'true');
+            chatWindow.classList.remove('active');
+        }
 
+        // FAB = open / maximize
+        fabBtn.addEventListener('click', openChat);
+
+        // X = close / minimize
         if (chatClose) {
-            chatClose.addEventListener('click', () => {
-                chatWindow.setAttribute('aria-hidden', 'true');
-                chatWindow.classList.remove('active');
-            });
+            chatClose.addEventListener('click', closeChat);
         }
 
         const assistantAnswers = {

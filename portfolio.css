@@ -232,6 +232,171 @@ body {
     padding: 130px 0 60px;
     overflow: visible;
 }
+.hero-section--light {
+    background: rgba(255,255,255,0.03);
+}
+.hero-container--centered {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Layered name + image */
+.hero-overlap-block {
+    position: relative;
+    line-height: 0.88;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+}
+
+.hero-name-nanbol {
+    font-size: clamp(72px, 16vw, 220px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    margin: 0;
+    line-height: 0.9;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+/* NANBOL goes behind the image */
+.hero-name-nanbol--back {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-overlap-img {
+    position: absolute;
+    left: 50%;
+    top: -8%;
+    transform: translateX(-50%);
+    height: 110%;
+    width: auto;
+    max-width: 50%;
+    object-fit: contain;
+    object-position: top center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-name-dassak {
+    font-size: clamp(72px, 16vw, 220px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    margin: 0;
+    line-height: 0.9;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+/* DASSAK goes in front of the image */
+.hero-name-dassak--front {
+    position: relative;
+    z-index: 3;
+}
+
+/* Socials row */
+.hero-socials-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 4;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+    transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.social-icon:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Introduction row below hero name */
+.hero-intro-below {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line-soft);
+    position: relative;
+    z-index: 4;
+    text-align: left;
+    width: 100%;
+    max-width: 900px;
+}
+
+.intro-left, .intro-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.intro-tag {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--font-mono);
+}
+
+.intro-headline {
+    font-size: clamp(18px, 2.4vw, 30px);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+.intro-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.intro-story-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    transition: gap 0.2s;
+}
+.intro-story-link:hover { gap: 14px; }
+.arrow-icon { font-size: 16px; }
+
+@media (max-width: 768px) {
+    .hero-overlap-img {
+        height: 80%;
+        max-width: 65%;
+        top: 0;
+    }
+    .hero-intro-below { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 480px) {
+    .hero-name-nanbol, .hero-name-dassak {
+        font-size: clamp(52px, 16vw, 100px);
+    }
+    .hero-overlap-img { height: 70%; max-width: 70%; }
+}
 
 /* Layered name + image */
 .hero-overlap-block {
@@ -592,14 +757,15 @@ body {
 .fab-wrap:hover .fab-label { opacity: 1; transform: translateY(0); }
 .fab-btn {
     width: 56px; height: 56px; border-radius: 50%;
-    border: 2px solid var(--accent); background: var(--surface);
+    border: none;
+    background: var(--surface);
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 0 0 1px rgba(234,75,113,0.22), 0 8px 32px rgba(234,75,113,0.18);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     transition: transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
     padding: 0;
 }
-.fab-btn:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px rgba(234,75,113,0.35), 0 12px 44px rgba(234,75,113,0.28); }
+.fab-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 44px rgba(0,0,0,0.4); }
 .fab-favicon-icon {
     width: 100%;
     height: 100%;
@@ -1024,13 +1190,22 @@ body {
 .chat-close {
     background: none;
     border: none;
+    outline: none;
     font-size: 22px;
     color: var(--muted);
     transition: color 0.2s;
     line-height: 1;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
 }
 .chat-close:hover {
     color: var(--text);
+}
+.chat-close:focus, .chat-close:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 .chat-messages {
     flex: 1;
